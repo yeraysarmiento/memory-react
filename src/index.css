@@ -94,3 +94,46 @@ header {
 .cell:hover span {
   display: block;
 }
+
+.players {
+  display: flex;
+  margin-top: 100px;
+}
+
+.player {
+  color: rgb(26, 41, 56);
+  background-color: rgb(190, 206, 217);
+  width: 100%;
+  margin: 15px;
+  height: 80px;
+  border-radius: 15px;
+  padding: 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+.player__points {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.player__pointer {
+  display: none;
+  transform: rotate(45deg);
+  position: absolute;
+  background-color: rgb(243, 168, 63);
+  top: -15px;
+  right: calc(50% - 15px);
+  height: 30px;
+  width: 30px;
+}
+
+.player:hover {
+  color: white;
+  background-color: rgb(243, 168, 63);
+}
+
+.player:hover .player__pointer {
+  display: block;
+}

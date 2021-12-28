@@ -65,18 +65,12 @@ function GamePage() {
           <div className="player">
             <p className="player__name">Player 1</p>
             <p className="player__points">2</p>
+            <div className="player__pointer" />
           </div>
           <div className="player">
             <p className="player__name">Player 2</p>
             <p className="player__points">2</p>
-          </div>
-          <div className="player">
-            <p className="player__name">Player 3</p>
-            <p className="player__points">2</p>
-          </div>
-          <div className="player">
-            <p className="player__name">Player 4</p>
-            <p className="player__points">2</p>
+            <div className="player__pointer" />
           </div>
         </section>
       </body>
