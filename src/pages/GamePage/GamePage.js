@@ -11,22 +11,54 @@ function GamePage() {
       <body>
         <div className="board-container">
           <ul className="board">
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
-            <li className="cell">1</li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
+            <li className="cell">
+              <span>1</span>
+            </li>
           </ul>
         </div>
         <section className="players">
