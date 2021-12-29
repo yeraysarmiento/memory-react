@@ -1,3 +1,5 @@
+import Cell from "../../components/Cell/Cell";
+
 function GamePage() {
   return (
     <>
@@ -11,9 +13,7 @@ function GamePage() {
       <main>
         <div className="board-container">
           <ul className="board">
-            <li className="cell">
-              <span>1</span>
-            </li>
+            <Cell content="🦊" />
             <li className="cell">
               <span>1</span>
             </li>

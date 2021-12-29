@@ -89,17 +89,20 @@ header {
   font-weight: bold;
   cursor: pointer;
 
+  & button {
+    visibility: hidden;
+    border: none;
+    background: inherit;
+    font-size: 40px;
+  }
+
   &:hover {
     color: white;
     background-color: rgb(190, 206, 217);
 
-    & span {
+    & button {
       visibility: visible;
     }
-  }
-
-  & span {
-    visibility: hidden;
   }
 }
 
