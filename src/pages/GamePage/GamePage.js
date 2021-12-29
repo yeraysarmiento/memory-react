@@ -1,6 +1,6 @@
 function GamePage() {
   return (
-    <div className="game-container">
+    <>
       <header>
         <h1 className="title">memory</h1>
         <ul className="menu">
@@ -8,7 +8,7 @@ function GamePage() {
           <li className="menu__element menu__element--new-game">New Game</li>
         </ul>
       </header>
-      <body>
+      <main>
         <div className="board-container">
           <ul className="board">
             <li className="cell">
@@ -73,8 +73,8 @@ function GamePage() {
             <div className="player__pointer" />
           </div>
         </section>
-      </body>
-    </div>
+      </main>
+    </>
   );
 }
 
