@@ -1,24 +1,9 @@
+import { useContext } from "react";
 import Board from "../../components/Board/Board";
+import GameContext from "../../store/contexts/GameContext";
 
 function GamePage() {
-  const list = [
-    "🦊",
-    "🐮",
-    "🐷",
-    "🦁",
-    "🐯",
-    "🐨",
-    "🐙",
-    "🐵",
-    "🦊",
-    "🐮",
-    "🐷",
-    "🦁",
-    "🐯",
-    "🐨",
-    "🐙",
-    "🐵",
-  ].sort(() => Math.random() - 0.5);
+  const { boardList } = useContext(GameContext);
 
   return (
     <>
@@ -31,7 +16,7 @@ function GamePage() {
       </header>
       <main>
         <div className="board-container">
-          <Board boardList={list} />
+          <Board boardList={boardList} />
         </div>
         <section className="players">
           <div className="player">

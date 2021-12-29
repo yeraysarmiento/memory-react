@@ -1,40 +1,31 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
+import "./Cell.scss";
 
-function Cell({ isMatched, content }) {
-  const [isHidden, setIsHidden] = useState(true);
-
-  const toggleHidden = () => {
-    setIsHidden(!isHidden);
-  };
-
-  return (
-    <>
-      {isHidden ? (
-        <li className="cell">
-          <button onClick={toggleHidden} type="button">
-            {content}
-          </button>
-        </li>
-      ) : (
-        <li className="cell cell--showing">
-          <button onClick={toggleHidden} type="button">
-            {content}
-          </button>
-        </li>
-      )}
-      {isMatched && <li className="cell cell-matched">{content}</li>}
-    </>
+function Cell({ cell, actionOnClick }) {
+  return cell.isHidden ? (
+    <li className="cell">
+      <button onClick={() => actionOnClick(cell)} type="button">
+        <span>{cell.content}</span>
+      </button>
+    </li>
+  ) : (
+    <li
+      className={cell.isMatched ? "cell cell--matched" : "cell cell--showing"}
+    >
+      <button onClick={() => actionOnClick(cell)} type="button">
+        <span>{cell.content}</span>
+      </button>
+    </li>
   );
 }
 
-Cell.defaultProps = {
-  isMatched: false,
-};
-
 Cell.propTypes = {
-  isMatched: PropTypes.bool,
-  content: PropTypes.string.isRequired,
+  cell: PropTypes.shape({
+    content: PropTypes.string.isRequired,
+    isHidden: PropTypes.bool,
+    isMatched: PropTypes.bool,
+  }).isRequired,
+  actionOnClick: PropTypes.func.isRequired,
 };
 
 export default Cell;
