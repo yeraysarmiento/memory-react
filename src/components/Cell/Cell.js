@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function Cell({ isMatched = false, content }) {
+function Cell({ isMatched, content }) {
   const [isHidden, setIsHidden] = useState(true);
 
   const toggleHidden = () => {
