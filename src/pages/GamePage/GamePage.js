@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import Board from "../../components/Board/Board";
+import GameContext from "../../store/contexts/GameContext";
+
 function GamePage() {
+  const { boardList } = useContext(GameContext);
+
   return (
     <>
       <header>
@@ -10,56 +16,7 @@ function GamePage() {
       </header>
       <main>
         <div className="board-container">
-          <ul className="board">
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-          </ul>
+          <Board boardList={boardList} />
         </div>
         <section className="players">
           <div className="player">
