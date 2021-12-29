@@ -3,7 +3,7 @@ import Cell from "../Cell/Cell";
 
 function Board({ boardList }) {
   return (
-    <ul>
+    <ul className="board">
       {boardList.map((cell) => (
         <Cell content={cell} key={cell} />
       ))}

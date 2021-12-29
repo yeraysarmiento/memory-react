@@ -1,6 +1,25 @@
-import Cell from "../../components/Cell/Cell";
+import Board from "../../components/Board/Board";
 
 function GamePage() {
+  const list = [
+    "🦊",
+    "🐮",
+    "🐷",
+    "🦁",
+    "🐯",
+    "🐨",
+    "🐙",
+    "🐵",
+    "🦊",
+    "🐮",
+    "🐷",
+    "🦁",
+    "🐯",
+    "🐨",
+    "🐙",
+    "🐵",
+  ].sort(() => Math.random() - 0.5);
+
   return (
     <>
       <header>
@@ -12,54 +31,7 @@ function GamePage() {
       </header>
       <main>
         <div className="board-container">
-          <ul className="board">
-            <Cell content="🦊" />
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-            <li className="cell">
-              <span>1</span>
-            </li>
-          </ul>
+          <Board boardList={list} />
         </div>
         <section className="players">
           <div className="player">
