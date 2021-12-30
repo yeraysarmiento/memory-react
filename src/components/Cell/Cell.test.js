@@ -30,7 +30,7 @@ describe("Given a Cell function", () => {
       expect(button).toBeInTheDocument();
     });
 
-    describe("When it is clicked", () => {
+    describe("When isHidden is true it is clicked", () => {
       test("Then it should call the actionOnClick function", () => {
         const onClick = jest.fn();
         const cell = {
@@ -72,6 +72,7 @@ describe("Given a Cell function", () => {
         expect(cellTag).toHaveClass("cell--showing");
       });
     });
+
     describe("When the cell property isHidden is false and isMatched is true", () => {
       test("Then it should render a <li> with a class cell--matched", () => {
         const onClick = jest.fn();
@@ -90,6 +91,28 @@ describe("Given a Cell function", () => {
         const cellTag = screen.getByRole("listitem");
 
         expect(cellTag).toHaveClass("cell--matched");
+      });
+
+      describe("When isHidden is false and it is clicked", () => {
+        test("Then it should call the actionOnClick function", () => {
+          const onClick = jest.fn();
+          const cell = {
+            content: "icon",
+            isHidden: false,
+            isMatched: true,
+          };
+
+          render(
+            <Provider store={store}>
+              <Cell cell={cell} actionOnClick={onClick} />
+            </Provider>
+          );
+
+          const button = screen.getByRole("button", { name: "icon" });
+          userEvent.click(button);
+
+          expect(onClick).toHaveBeenCalled();
+        });
       });
     });
   });
