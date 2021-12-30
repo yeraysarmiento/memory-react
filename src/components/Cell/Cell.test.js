@@ -4,6 +4,8 @@ import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import Cell from "./Cell";
 import configureStore from "../../redux/store/index";
+import React from "react";
+window.React = React;
 
 describe("Given a Cell function", () => {
   const store = configureStore();
