@@ -35,7 +35,7 @@ describe("Given a Board function", () => {
 
       render(
         <Provider store={store}>
-          <Board boardList={boardList} />
+          <Board boardList={boardList} onPair={() => {}} />
         </Provider>
       );
       const cells = screen.getAllByRole("listitem");
@@ -46,7 +46,7 @@ describe("Given a Board function", () => {
     });
 
     describe("When a <li> element is clicked", () => {
-      test("Then the actionOnClick function should be invoked", () => {
+      test("Then the onPair function should be invoked", () => {
         const boardList = [
           {
             id: 1,
@@ -67,10 +67,11 @@ describe("Given a Board function", () => {
             isHidden: true,
           },
         ];
+        const onPair = jest.fn();
 
         render(
           <Provider store={store}>
-            <Board boardList={boardList} />
+            <Board boardList={boardList} onPair={onPair} />
           </Provider>
         );
 
@@ -79,7 +80,7 @@ describe("Given a Board function", () => {
         const button = screen.getByRole("button", { name: "🦊" });
         userEvent.click(button);
 
-        expect(mockedFunction).toHaveBeenCalled();
+        expect(onPair).toHaveBeenCalled();
       });
     });
   });
