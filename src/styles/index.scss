@@ -63,44 +63,9 @@ header {
 }
 
 .players {
-  display: flex;
-  margin: 100px 0 30px 0;
-}
-
-.player {
-  color: rgb(26, 41, 56);
-  background-color: rgb(190, 206, 217);
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  margin: 0 15px;
-  height: auto;
-  border-radius: 15px;
-  padding: 15px;
-  position: relative;
-  cursor: pointer;
-
-  &__points {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 30px;
-  }
-
-  &__pointer {
-    display: none;
-    transform: rotate(45deg);
-    position: absolute;
-    background-color: rgb(243, 168, 63);
-    top: -10px;
-    right: calc(50% - 10px);
-    height: 20px;
-    width: 20px;
-  }
-
-  &:hover {
-    color: white;
-    background-color: rgb(243, 168, 63);
-  }
-
-  &:hover .player__pointer {
-    display: block;
-  }
+  display: flex;
+  margin-bottom: 15px;
 }

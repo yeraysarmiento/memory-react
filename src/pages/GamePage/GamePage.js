@@ -1,4 +1,5 @@
 import Board from "../../components/Board/Board";
+import Player from "../../components/Player/Player";
 import useBoard from "../../hooks/useBoard";
 import useSelected from "../../hooks/useSelected";
 
@@ -6,6 +7,19 @@ function GamePage() {
   const { boardList } = useBoard();
   const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
   const { setMatchedCell } = useBoard();
+
+  const players = [
+    {
+      name: "Player 1",
+      points: 8,
+      isPlaying: true,
+    },
+    {
+      name: "Player 2",
+      points: 4,
+      isPlaying: false,
+    },
+  ];
 
   const setPair = (cell) => {
     if (!cell.isMatched) {
@@ -52,16 +66,9 @@ function GamePage() {
           <Board boardList={boardList} onPair={setPair} />
         </div>
         <section className="players">
-          <div className="player">
-            <p className="player__name">Player 1</p>
-            <p className="player__points">2</p>
-            <div className="player__pointer" />
-          </div>
-          <div className="player">
-            <p className="player__name">Player 2</p>
-            <p className="player__points">2</p>
-            <div className="player__pointer" />
-          </div>
+          {players.map((player) => (
+            <Player player={player} key={player.name} />
+          ))}
         </section>
       </main>
     </>
