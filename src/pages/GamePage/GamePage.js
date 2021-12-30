@@ -23,10 +23,10 @@ function GamePage() {
 
   const setPair = (cell) => {
     if (!cell.isMatched) {
-      if (selectedCells.includes(cell)) {
-        removeSelectedCell(cell);
-      } else if (selectedCells.length < 2) {
-        addSelectedCell(cell);
+      if (!selectedCells.includes(cell)) {
+        if (selectedCells.length < 2) {
+          addSelectedCell(cell);
+        }
       }
     }
   };
