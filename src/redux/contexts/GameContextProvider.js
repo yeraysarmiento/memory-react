@@ -1,7 +1,9 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
-import { useState } from "react";
+import { useReducer } from "react";
 import PropTypes from "prop-types";
 import GameContext from "./GameContext";
+import selectedReducer from "../reducer/selectedReducer";
+import boardReducer from "../reducer/boardReducer";
 
 function GameContextProvider({ children }) {
   const list = [
@@ -104,13 +106,15 @@ function GameContextProvider({ children }) {
   ];
   const gameList = list.sort(() => Math.random() - 0.5);
 
-  const [boardList, setBoardList] = useState(gameList);
+  const [selectedCells, dispatch] = useReducer(selectedReducer, []);
+  const [cellsList] = useReducer(boardReducer, gameList);
 
   return (
     <GameContext.Provider
       value={{
-        boardList,
-        setBoardList,
+        selectedCells,
+        dispatch,
+        cellsList,
       }}
     >
       {children}

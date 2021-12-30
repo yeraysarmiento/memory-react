@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import Board from "../../components/Board/Board";
-import GameContext from "../../store/contexts/GameContext";
+import useBoard from "../../hooks/useBoard";
 
 function GamePage() {
-  const { boardList } = useContext(GameContext);
+  const { boardList } = useBoard();
 
   return (
     <>
