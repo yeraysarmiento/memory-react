@@ -1,37 +1,40 @@
 import PropTypes, { objectOf } from "prop-types";
-import { useState } from "react/cjs/react.development";
+import useBoard from "../../hooks/useBoard";
+import useSelecteds from "../../hooks/useSelecteds";
 import Cell from "../Cell/Cell";
 import "./Board.scss";
 
 function Board({ boardList }) {
-  const [selected, setSelected] = useState([]);
+  const { selectedCells, addSelectedCell, removeSelectedCell } = useSelecteds();
+  const { setMatchedCell } = useBoard();
 
   const checkPair = () => {
-    if (selected[0].content !== selected[1].content) {
-      console.log("hola");
-      selected[0].isHidden = false;
-      selected[1].isHidden = true;
-      console.log(selected);
+    const cellOne = selectedCells[0];
+    const cellTwo = selectedCells[1];
+
+    if (cellOne.content !== cellTwo.content) {
+      removeSelectedCell(cellOne);
+      removeSelectedCell(cellTwo);
+    } else {
+      setMatchedCell(cellOne);
+      setMatchedCell(cellTwo);
+      removeSelectedCell(cellOne);
+      removeSelectedCell(cellTwo);
     }
   };
 
   const setPair = (cell) => {
-    if (selected.includes(cell)) {
-      cell.isHidden = true;
-      setSelected(
-        selected.filter((selectedCell) => selectedCell.id !== cell.id)
-      );
-    } else if (selected.length < 2) {
-      cell.isHidden = false;
-      console.log(cell);
-      setSelected([...selected, cell]);
+    if (selectedCells.includes(cell)) {
+      removeSelectedCell(cell);
+    } else if (selectedCells.length < 2) {
+      addSelectedCell(cell);
     }
   };
 
-  if (selected.length === 2) {
+  if (selectedCells.length === 2) {
     setTimeout(() => {
       checkPair();
-    }, 1000);
+    }, 500);
   }
 
   return (
