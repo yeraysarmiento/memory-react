@@ -1,48 +1,12 @@
 import PropTypes, { objectOf } from "prop-types";
-import useBoard from "../../hooks/useBoard";
-import useSelected from "../../hooks/useSelected";
 import Cell from "../Cell/Cell";
 import "./Board.scss";
 
-function Board({ boardList }) {
-  const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
-  const { setMatchedCell } = useBoard();
-
-  const checkPair = () => {
-    const cellOne = selectedCells[0];
-    const cellTwo = selectedCells[1];
-
-    if (cellOne.content !== cellTwo.content) {
-      removeSelectedCell(cellOne);
-      removeSelectedCell(cellTwo);
-    } else {
-      setMatchedCell(cellOne);
-      setMatchedCell(cellTwo);
-      removeSelectedCell(cellOne);
-      removeSelectedCell(cellTwo);
-    }
-  };
-
-  const setPair = (cell) => {
-    if (!cell.isMatched) {
-      if (selectedCells.includes(cell)) {
-        removeSelectedCell(cell);
-      } else if (selectedCells.length < 2) {
-        addSelectedCell(cell);
-      }
-    }
-  };
-
-  if (selectedCells.length === 2) {
-    setTimeout(() => {
-      checkPair();
-    }, 500);
-  }
-
+function Board({ boardList, onPair }) {
   return (
     <ul className="board">
       {boardList.map((cell) => (
-        <Cell cell={cell} key={cell.id} actionOnClick={setPair} />
+        <Cell cell={cell} key={cell.id} actionOnClick={onPair} />
       ))}
     </ul>
   );
@@ -50,6 +14,7 @@ function Board({ boardList }) {
 
 Board.propTypes = {
   boardList: PropTypes.arrayOf(objectOf).isRequired,
+  onPair: PropTypes.func.isRequired,
 };
 
 export default Board;
