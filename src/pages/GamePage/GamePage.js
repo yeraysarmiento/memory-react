@@ -8,19 +8,6 @@ function GamePage() {
   const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
   const { setMatchedCell } = useBoard();
 
-  const players = [
-    {
-      name: "Player 1",
-      points: 8,
-      isPlaying: true,
-    },
-    {
-      name: "Player 2",
-      points: 4,
-      isPlaying: false,
-    },
-  ];
-
   const setPair = (cell) => {
     if (!cell.isMatched) {
       if (!selectedCells.includes(cell)) {

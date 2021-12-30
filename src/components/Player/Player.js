@@ -3,7 +3,7 @@ import "./Player.scss";
 
 function Player({ player }) {
   return (
-    <div className={player.isPlaying ? "player" : "player player--playing"}>
+    <div className={!player.isPlaying ? "player" : "player player--playing"}>
       <p className="player__name">{player.name}</p>
       <p className="player__points">{player.points}</p>
       <div className="player__pointer" />
