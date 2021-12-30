@@ -4,7 +4,7 @@ import {
   removeSelectedAction,
 } from "../redux/actions/actionCreators";
 
-const useSelecteds = () => {
+const useSelected = () => {
   const selectedCells = useSelector((store) => store.selectedCells);
   const dispatch = useDispatch();
 
@@ -23,4 +23,4 @@ const useSelecteds = () => {
   };
 };
 
-export default useSelecteds;
+export default useSelected;

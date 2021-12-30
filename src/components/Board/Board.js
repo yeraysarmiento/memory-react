@@ -1,11 +1,11 @@
 import PropTypes, { objectOf } from "prop-types";
 import useBoard from "../../hooks/useBoard";
-import useSelecteds from "../../hooks/useSelecteds";
+import useSelected from "../../hooks/useSelected";
 import Cell from "../Cell/Cell";
 import "./Board.scss";
 
 function Board({ boardList }) {
-  const { selectedCells, addSelectedCell, removeSelectedCell } = useSelecteds();
+  const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
   const { setMatchedCell } = useBoard();
 
   const checkPair = () => {
@@ -24,10 +24,12 @@ function Board({ boardList }) {
   };
 
   const setPair = (cell) => {
-    if (selectedCells.includes(cell)) {
-      removeSelectedCell(cell);
-    } else if (selectedCells.length < 2) {
-      addSelectedCell(cell);
+    if (!cell.isMatched) {
+      if (selectedCells.includes(cell)) {
+        removeSelectedCell(cell);
+      } else if (selectedCells.length < 2) {
+        addSelectedCell(cell);
+      }
     }
   };
 
