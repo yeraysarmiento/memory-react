@@ -6,9 +6,21 @@ import usePlayers from "../../hooks/usePlayers";
 import { useEffect } from "react";
 
 function GamePage() {
-  const { boardList, setMatchedCell } = useBoard();
+  const { boardList, setMatchedCell, resetBoard } = useBoard();
   const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
   const { players, setTurn, addPoints } = usePlayers();
+
+  const checkBoard = () => {
+    const checkedBoard = boardList.map((cell) =>
+      cell.isMatched ? true : false
+    );
+    console.log(checkedBoard);
+
+    if (!checkedBoard.includes(false)) {
+      resetBoard();
+      console.log("inside");
+    }
+  };
 
   const setPair = (cell) => {
     if (!cell.isMatched) {
@@ -49,6 +61,7 @@ function GamePage() {
     if (selectedCells.length === 2) {
       setTimeout(() => {
         checkPair(selectedCells);
+        checkBoard();
       }, 500);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -109,6 +109,9 @@ const boardReducer = (cells = gameList, action = {}) => {
         cell.id === action.cell.id ? { ...cell, isMatched: true } : cell
       );
       break;
+    case actionTypes.resetBoard:
+      cellsList = [...gameList].sort(() => Math.random() - 0.5);
+      break;
     default:
       cellsList = cells;
   }

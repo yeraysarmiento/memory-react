@@ -30,7 +30,6 @@ const playersReducer = (players = playersList, action = {}) => {
       ];
       break;
     case actionTypes.addPoints:
-      console.log(1);
       playersList = [
         ...players.map((player) =>
           action.player.name === player.name
