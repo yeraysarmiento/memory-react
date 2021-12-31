@@ -1,0 +1,37 @@
+.player {
+  color: rgb(26, 41, 56);
+  background-color: rgb(190, 206, 217);
+  width: 100%;
+  margin: 0 15px;
+  height: auto;
+  border-radius: 15px;
+  padding: 15px;
+  position: relative;
+  cursor: pointer;
+
+  &__points {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+
+  &__pointer {
+    display: none;
+    transform: rotate(45deg);
+    position: absolute;
+    background-color: rgb(243, 168, 63);
+    top: -10px;
+    right: calc(50% - 10px);
+    height: 20px;
+    width: 20px;
+  }
+
+  &--playing {
+    color: white;
+    background-color: rgb(243, 168, 63);
+  }
+
+  &--playing .player__pointer {
+    display: block;
+  }
+}

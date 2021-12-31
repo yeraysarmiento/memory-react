@@ -1,18 +1,21 @@
 import Board from "../../components/Board/Board";
+import Player from "../../components/Player/Player";
 import useBoard from "../../hooks/useBoard";
 import useSelected from "../../hooks/useSelected";
+import usePlayers from "../../hooks/usePlayers";
+import { useEffect } from "react";
 
 function GamePage() {
-  const { boardList } = useBoard();
+  const { boardList, setMatchedCell } = useBoard();
   const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
-  const { setMatchedCell } = useBoard();
+  const { players, setTurn, addPoints } = usePlayers();
 
   const setPair = (cell) => {
     if (!cell.isMatched) {
-      if (selectedCells.includes(cell)) {
-        removeSelectedCell(cell);
-      } else if (selectedCells.length < 2) {
-        addSelectedCell(cell);
+      if (!selectedCells.includes(cell)) {
+        if (selectedCells.length < 2) {
+          addSelectedCell(cell);
+        }
       }
     }
   };
@@ -24,19 +27,32 @@ function GamePage() {
     if (cellOne.content !== cellTwo.content) {
       removeSelectedCell(cellOne);
       removeSelectedCell(cellTwo);
+      if (players[0].isPlaying) {
+        setTurn(players[1]);
+      } else {
+        setTurn(players[0]);
+      }
     } else {
       setMatchedCell(cellOne);
       setMatchedCell(cellTwo);
       removeSelectedCell(cellOne);
       removeSelectedCell(cellTwo);
+      if (players[0].isPlaying) {
+        addPoints(players[0]);
+      } else {
+        addPoints(players[1]);
+      }
     }
   };
 
-  if (selectedCells.length === 2) {
-    setTimeout(() => {
-      checkPair(selectedCells);
-    }, 500);
-  }
+  useEffect(() => {
+    if (selectedCells.length === 2) {
+      setTimeout(() => {
+        checkPair(selectedCells);
+      }, 500);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedCells]);
 
   return (
     <>
@@ -52,16 +68,9 @@ function GamePage() {
           <Board boardList={boardList} onPair={setPair} />
         </div>
         <section className="players">
-          <div className="player">
-            <p className="player__name">Player 1</p>
-            <p className="player__points">2</p>
-            <div className="player__pointer" />
-          </div>
-          <div className="player">
-            <p className="player__name">Player 2</p>
-            <p className="player__points">2</p>
-            <div className="player__pointer" />
-          </div>
+          {players.map((player) => (
+            <Player player={player} key={player.name} />
+          ))}
         </section>
       </main>
     </>

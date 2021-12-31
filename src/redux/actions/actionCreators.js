@@ -14,3 +14,18 @@ export const setMatchedAction = (cell) => ({
   type: actionTypes.setMatched,
   cell,
 });
+
+export const addPlayerAction = (player) => ({
+  type: actionTypes.addPlayer,
+  player,
+});
+
+export const setTurnAction = (player) => ({
+  type: actionTypes.setTurn,
+  player,
+});
+
+export const addPointsAction = (player) => ({
+  type: actionTypes.addPoints,
+  player,
+});
