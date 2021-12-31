@@ -13,6 +13,7 @@ function GamePage() {
   const resetGame = () => {
     resetBoard();
     resetPoints();
+    setTurn(players[0]);
   };
 
   const setPair = (cell) => {
