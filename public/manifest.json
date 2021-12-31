@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "memory",
+  "name": "memory",
   "icons": [
     {
       "src": "./favicon.png",
@@ -20,7 +20,7 @@
   ],
   "start_url": ".",
   "scope": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
+  "display": "fullscreen",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff"
 }
