@@ -75,12 +75,12 @@ function GamePage() {
         <div className="board-container">
           <Board boardList={boardList} onPair={setPair} />
         </div>
-        <section className="players">
-          {players.map((player) => (
-            <Player player={player} key={player.name} />
-          ))}
-        </section>
       </main>
+      <footer className="players">
+        {players.map((player) => (
+          <Player player={player} key={player.name} />
+        ))}
+      </footer>
     </>
   );
 }

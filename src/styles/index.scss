@@ -13,7 +13,11 @@
 }
 
 .app {
+  height: 100vh;
+  margin: 0 auto;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 button {
@@ -23,14 +27,21 @@ button {
 }
 
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
+  min-height: 100px;
+  background: blue;
+}
 
-  display: flex;
-  align-items: flex-end;
-  height: 50px;
-  padding: 0 20px;
+footer {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  min-height: 100px;
+  background: green;
+}
+
+main {
+  background: red;
+  height: calc(100vh - 100px - 100px);
+  padding: 0 15px;
 }
 
 .title {
@@ -69,10 +80,6 @@ header {
 }
 
 .players {
-  height: 50px;
-  position: fixed;
-  bottom: 0;
   width: 100%;
   display: flex;
-  margin: 15px 0 50px 0;
 }

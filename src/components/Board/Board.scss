@@ -6,14 +6,13 @@
   row-gap: 15px;
   list-style: none;
   aspect-ratio: 1 / 1;
-  max-height: calc(100% - 60px - 125px);
-  margin-bottom: 125px;
-  margin-top: 60px;
+  margin: 0 auto;
+  background: orange;
 
   &-container {
-    height: 100vh;
-    display: grid;
+    height: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin: 0 15px;
   }
 }

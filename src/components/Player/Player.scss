@@ -35,16 +35,6 @@
   &--playing {
     color: white;
     background-color: rgb(243, 168, 63);
-
-    &::after {
-      content: "YOUR TURN";
-      color: rgb(243, 168, 63);
-      position: absolute;
-      bottom: -25px;
-      right: 30px;
-      font-style: italic;
-      font-weight: bold;
-    }
   }
 
   &--playing .player__pointer {
