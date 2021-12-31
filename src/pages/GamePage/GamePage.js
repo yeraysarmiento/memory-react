@@ -2,11 +2,13 @@ import Board from "../../components/Board/Board";
 import Player from "../../components/Player/Player";
 import useBoard from "../../hooks/useBoard";
 import useSelected from "../../hooks/useSelected";
+import usePlayers from "../../hooks/usePlayers";
+import { useEffect } from "react";
 
 function GamePage() {
-  const { boardList } = useBoard();
+  const { boardList, setMatchedCell } = useBoard();
   const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
-  const { setMatchedCell } = useBoard();
+  const { players, setTurn, addPoints } = usePlayers();
 
   const setPair = (cell) => {
     if (!cell.isMatched) {
@@ -25,19 +27,32 @@ function GamePage() {
     if (cellOne.content !== cellTwo.content) {
       removeSelectedCell(cellOne);
       removeSelectedCell(cellTwo);
+      if (players[0].isPlaying) {
+        setTurn(players[1]);
+      } else {
+        setTurn(players[0]);
+      }
     } else {
       setMatchedCell(cellOne);
       setMatchedCell(cellTwo);
       removeSelectedCell(cellOne);
       removeSelectedCell(cellTwo);
+      if (players[0].isPlaying) {
+        addPoints(players[0]);
+      } else {
+        addPoints(players[1]);
+      }
     }
   };
 
-  if (selectedCells.length === 2) {
-    setTimeout(() => {
-      checkPair(selectedCells);
-    }, 500);
-  }
+  useEffect(() => {
+    if (selectedCells.length === 2) {
+      setTimeout(() => {
+        checkPair(selectedCells);
+      }, 500);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedCells]);
 
   return (
     <>

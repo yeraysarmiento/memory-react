@@ -26,6 +26,6 @@ export const setTurnAction = (player) => ({
 });
 
 export const addPointsAction = (player) => ({
-  type: actionTypes.setTurn,
+  type: actionTypes.addPoints,
   player,
 });

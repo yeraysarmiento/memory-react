@@ -14,7 +14,7 @@ function Player({ player }) {
 Player.propTypes = {
   player: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    points: PropTypes.bool,
+    points: PropTypes.number,
     isPlaying: PropTypes.bool,
   }).isRequired,
 };

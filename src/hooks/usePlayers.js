@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addPlayerAction,
@@ -17,9 +18,10 @@ const usePlayers = () => {
     dispatch(setTurnAction(player));
   };
 
-  const addPoints = (player) => {
-    dispatch(addPointsAction(player));
-  };
+  const addPoints = useCallback(
+    (player) => dispatch(addPointsAction(player)),
+    [dispatch]
+  );
 
   return {
     players,
