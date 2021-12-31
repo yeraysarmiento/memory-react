@@ -13,7 +13,11 @@
 }
 
 .app {
+  height: 100vh;
+  margin: 0 auto;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 button {
@@ -23,39 +27,51 @@ button {
 }
 
 header {
-  position: fixed;
-  top: 0;
+  min-height: 50px;
+  padding: 15px;
+  display: grid;
   width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 15px;
+  grid-template-areas: "title title title restart";
+}
 
-  display: flex;
-  align-items: flex-end;
-  height: 50px;
-  padding: 0 20px;
+footer {
+  padding: 40px 15px 20px 15px;
+  min-height: 100px;
+}
+
+main {
+  height: calc(100vh - 100px - 100px);
+  padding: 0 15px;
 }
 
 .title {
+  grid-area: title;
   color: rgb(26, 41, 56);
   font-size: 25px;
-  width: 100%;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
 .menu {
   width: 100%;
-  display: flex;
-  list-style: none;
   font-size: 12px;
+  height: 30px;
 
   &__element {
     width: 100%;
-    height: 25px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     border-radius: 30px;
-    font-weight: bold;
+    font-weight: bolder;
 
     &--restart {
+      grid-area: restart;
       color: white;
       background-color: rgb(243, 168, 63);
       margin-right: 15px;
@@ -69,10 +85,17 @@ header {
 }
 
 .players {
-  height: 50px;
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  display: flex;
-  margin: 15px 0 50px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 15px;
+  grid-template-areas: "player1 player1 player2 player2";
+
+  & > div:nth-child(1) {
+    grid-area: player1;
+  }
+
+  & > div:nth-child(2) {
+    grid-area: player2;
+  }
 }

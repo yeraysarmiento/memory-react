@@ -4,6 +4,7 @@ import useBoard from "../../hooks/useBoard";
 import useSelected from "../../hooks/useSelected";
 import usePlayers from "../../hooks/usePlayers";
 import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function GamePage() {
   const { boardList, setMatchedCell, resetBoard } = useBoard();
@@ -65,22 +66,24 @@ function GamePage() {
       <header>
         <h1 className="title">memory</h1>
         <ul className="menu">
+          {/* <li className="menu__element menu__element--new-game">New Game</li> */}
           <li className="menu__element menu__element--restart">
-            <button onClick={resetGame}>Restart</button>
+            <button onClick={resetGame}>
+              <FontAwesomeIcon icon="redo" />
+            </button>
           </li>
-          <li className="menu__element menu__element--new-game">New Game</li>
         </ul>
       </header>
       <main>
         <div className="board-container">
           <Board boardList={boardList} onPair={setPair} />
         </div>
-        <section className="players">
-          {players.map((player) => (
-            <Player player={player} key={player.name} />
-          ))}
-        </section>
       </main>
+      <footer className="players">
+        {players.map((player) => (
+          <Player player={player} key={player.name} />
+        ))}
+      </footer>
     </>
   );
 }

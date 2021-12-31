@@ -2,7 +2,6 @@
   color: rgb(26, 41, 56);
   background-color: rgb(190, 206, 217);
   width: 100%;
-  margin: 0 15px;
   height: auto;
   border-radius: 15px;
   padding: 15px;
@@ -35,16 +34,6 @@
   &--playing {
     color: white;
     background-color: rgb(243, 168, 63);
-
-    &::after {
-      content: "YOUR TURN";
-      color: rgb(243, 168, 63);
-      position: absolute;
-      bottom: -25px;
-      right: 30px;
-      font-style: italic;
-      font-weight: bold;
-    }
   }
 
   &--playing .player__pointer {
