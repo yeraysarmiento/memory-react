@@ -65,10 +65,10 @@ function GamePage() {
       <header>
         <h1 className="title">memory</h1>
         <ul className="menu">
+          <li className="menu__element menu__element--new-game">New Game</li>
           <li className="menu__element menu__element--restart">
             <button onClick={resetGame}>Restart</button>
           </li>
-          <li className="menu__element menu__element--new-game">New Game</li>
         </ul>
       </header>
       <main>
