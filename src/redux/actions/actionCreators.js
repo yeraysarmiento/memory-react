@@ -33,3 +33,7 @@ export const addPointsAction = (player) => ({
   type: actionTypes.addPoints,
   player,
 });
+
+export const resetPointsAction = () => ({
+  type: actionTypes.resetPoints,
+});

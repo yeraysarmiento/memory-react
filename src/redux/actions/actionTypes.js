@@ -6,6 +6,7 @@ const actionTypes = {
   addPlayer: "ADD_PLAYER",
   setTurn: "SET_TURN",
   addPoints: "ADD_POINTS",
+  resetPoints: "RESET_POINTS",
 };
 
 export default actionTypes;

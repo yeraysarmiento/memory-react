@@ -8,18 +8,11 @@ import { useEffect } from "react";
 function GamePage() {
   const { boardList, setMatchedCell, resetBoard } = useBoard();
   const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
-  const { players, setTurn, addPoints } = usePlayers();
+  const { players, setTurn, addPoints, resetPoints } = usePlayers();
 
-  const checkBoard = () => {
-    const checkedBoard = boardList.map((cell) =>
-      cell.isMatched ? true : false
-    );
-    console.log(checkedBoard);
-
-    if (!checkedBoard.includes(false)) {
-      resetBoard();
-      console.log("inside");
-    }
+  const resetGame = () => {
+    resetBoard();
+    resetPoints();
   };
 
   const setPair = (cell) => {
@@ -61,7 +54,6 @@ function GamePage() {
     if (selectedCells.length === 2) {
       setTimeout(() => {
         checkPair(selectedCells);
-        checkBoard();
       }, 500);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -72,7 +64,9 @@ function GamePage() {
       <header>
         <h1 className="title">memory</h1>
         <ul className="menu">
-          <li className="menu__element menu__element--restart">Restart</li>
+          <li className="menu__element menu__element--restart">
+            <button onClick={resetGame}>Restart</button>
+          </li>
           <li className="menu__element menu__element--new-game">New Game</li>
         </ul>
       </header>

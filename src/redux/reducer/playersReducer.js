@@ -38,6 +38,9 @@ const playersReducer = (players = playersList, action = {}) => {
         ),
       ];
       break;
+    case actionTypes.resetPoints:
+      playersList = [...players.map((player) => ({ ...player, points: 0 }))];
+      break;
 
     default:
       playersList = players;
