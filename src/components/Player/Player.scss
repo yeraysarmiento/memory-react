@@ -7,12 +7,18 @@
   border-radius: 15px;
   padding: 15px;
   position: relative;
+  display: flex;
+  align-items: center;
   cursor: pointer;
+
+  & p {
+    width: 100%;
+  }
 
   &__points {
     font-size: 22px;
     font-weight: bold;
-    margin-top: 30px;
+    text-align: right;
   }
 
   &__pointer {
@@ -29,6 +35,16 @@
   &--playing {
     color: white;
     background-color: rgb(243, 168, 63);
+
+    &::after {
+      content: "YOUR TURN";
+      color: rgb(243, 168, 63);
+      position: absolute;
+      bottom: -25px;
+      right: 30px;
+      font-style: italic;
+      font-weight: bold;
+    }
   }
 
   &--playing .player__pointer {
