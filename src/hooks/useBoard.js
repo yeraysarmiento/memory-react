@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setMatchedAction } from "../redux/actions/actionCreators";
+import {
+  resetBoardAction,
+  setMatchedAction,
+} from "../redux/actions/actionCreators";
 
 const useBoard = () => {
   const boardList = useSelector((store) => store.boardList);
@@ -9,9 +12,14 @@ const useBoard = () => {
     dispatch(setMatchedAction(cell));
   };
 
+  const resetBoard = () => {
+    dispatch(resetBoardAction());
+  };
+
   return {
     boardList,
     setMatchedCell,
+    resetBoard,
   };
 };
 

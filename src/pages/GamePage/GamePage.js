@@ -6,9 +6,14 @@ import usePlayers from "../../hooks/usePlayers";
 import { useEffect } from "react";
 
 function GamePage() {
-  const { boardList, setMatchedCell } = useBoard();
+  const { boardList, setMatchedCell, resetBoard } = useBoard();
   const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
-  const { players, setTurn, addPoints } = usePlayers();
+  const { players, setTurn, addPoints, resetPoints } = usePlayers();
+
+  const resetGame = () => {
+    resetBoard();
+    resetPoints();
+  };
 
   const setPair = (cell) => {
     if (!cell.isMatched) {
@@ -59,7 +64,9 @@ function GamePage() {
       <header>
         <h1 className="title">memory</h1>
         <ul className="menu">
-          <li className="menu__element menu__element--restart">Restart</li>
+          <li className="menu__element menu__element--restart">
+            <button onClick={resetGame}>Restart</button>
+          </li>
           <li className="menu__element menu__element--new-game">New Game</li>
         </ul>
       </header>

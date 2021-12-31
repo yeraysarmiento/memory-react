@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   addPlayerAction,
   addPointsAction,
+  resetPointsAction,
   setTurnAction,
 } from "../redux/actions/actionCreators";
 
@@ -23,11 +24,16 @@ const usePlayers = () => {
     [dispatch]
   );
 
+  const resetPoints = () => {
+    dispatch(resetPointsAction());
+  };
+
   return {
     players,
     addPlayer,
     setTurn,
     addPoints,
+    resetPoints,
   };
 };
 

@@ -15,6 +15,10 @@ export const setMatchedAction = (cell) => ({
   cell,
 });
 
+export const resetBoardAction = () => ({
+  type: actionTypes.resetBoard,
+});
+
 export const addPlayerAction = (player) => ({
   type: actionTypes.addPlayer,
   player,
@@ -28,4 +32,8 @@ export const setTurnAction = (player) => ({
 export const addPointsAction = (player) => ({
   type: actionTypes.addPoints,
   player,
+});
+
+export const resetPointsAction = () => ({
+  type: actionTypes.resetPoints,
 });
