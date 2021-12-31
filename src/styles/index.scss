@@ -27,10 +27,13 @@ button {
 }
 
 header {
-  min-height: 100px;
+  min-height: 50px;
   padding: 15px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 15px;
+  grid-template-areas: "title title title restart";
 }
 
 footer {
@@ -44,9 +47,9 @@ main {
 }
 
 .title {
+  grid-area: title;
   color: rgb(26, 41, 56);
   font-size: 25px;
-  height: 40px;
   margin-bottom: 20px;
   text-decoration: underline;
   text-underline-offset: 6px;
@@ -54,10 +57,6 @@ main {
 
 .menu {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 15px;
-  grid-template-areas: "newgame newgame restart restart";
   font-size: 12px;
   height: 30px;
 
@@ -79,7 +78,6 @@ main {
     }
 
     &--new-game {
-      grid-area: newgame;
       color: rgb(26, 41, 56);
       background-color: rgb(190, 206, 217);
     }
