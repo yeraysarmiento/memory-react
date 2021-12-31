@@ -5,13 +5,15 @@
   column-gap: 15px;
   row-gap: 15px;
   list-style: none;
-  margin: 15px;
+  aspect-ratio: 1 / 1;
+  max-height: calc(100% - 60px - 125px);
+  margin-bottom: 125px;
+  margin-top: 60px;
 
   &-container {
-    margin-top: 100px;
-    display: flex;
-    width: 100%;
-    max-height: calc(100% - 50px - 80px);
-    aspect-ratio: 1 / 1;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    margin: 0 15px;
   }
 }
