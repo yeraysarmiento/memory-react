@@ -1,0 +1,34 @@
+.menu {
+  width: 100%;
+  font-size: 12px;
+  height: 30px;
+
+  & button {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  &__element {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-weight: bolder;
+
+    &--restart {
+      grid-area: restart;
+      color: white;
+      background-color: rgb(243, 168, 63);
+      margin-right: 15px;
+    }
+
+    &--new-game {
+      color: rgb(26, 41, 56);
+      background-color: rgb(190, 206, 217);
+    }
+  }
+}

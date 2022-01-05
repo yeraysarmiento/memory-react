@@ -4,7 +4,8 @@ import useBoard from "../../hooks/useBoard";
 import useSelected from "../../hooks/useSelected";
 import usePlayers from "../../hooks/usePlayers";
 import { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Menu from "../../components/Menu/Menu";
+import Form from "../../components/Form/Form";
 
 function GamePage() {
   const { boardList, setMatchedCell, resetBoard } = useBoard();
@@ -61,18 +62,20 @@ function GamePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCells]);
 
+  const onChange = (event) => {
+    console.log(event.target.value);
+  };
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    console.log("submit");
+  };
+
   return (
     <>
       <header>
         <h1 className="title">memory</h1>
-        <ul className="menu">
-          {/* <li className="menu__element menu__element--new-game">New Game</li> */}
-          <li className="menu__element menu__element--restart">
-            <button onClick={resetGame}>
-              <FontAwesomeIcon icon="redo" />
-            </button>
-          </li>
-        </ul>
+        <Menu onClick={resetGame} />
       </header>
       <main>
         <div className="board-container">
@@ -84,6 +87,7 @@ function GamePage() {
           <Player player={player} key={player.name} />
         ))}
       </footer>
+      <Form onSubmit={onSubmit} onChange={onChange} />
     </>
   );
 }

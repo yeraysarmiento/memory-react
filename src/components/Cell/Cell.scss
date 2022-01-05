@@ -1,5 +1,7 @@
+@import "../../styles/_colors.scss";
+
 .cell {
-  background: rgb(26, 41, 56);
+  background: $main-color;
   border-radius: 50%;
   overflow: hidden;
 
@@ -18,7 +20,7 @@
 
   &--showing {
     color: white;
-    background-color: rgb(190, 206, 217);
+    background-color: $secondary-color;
 
     & span {
       visibility: visible;
@@ -26,7 +28,7 @@
   }
 
   &--matched {
-    background-color: rgb(243, 168, 63);
+    background-color: $action-color;
 
     & span {
       visibility: visible;

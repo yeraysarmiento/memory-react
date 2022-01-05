@@ -1,0 +1,19 @@
+@import "../../styles/colors.scss";
+
+.game-form {
+  background: $main-color;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  z-index: -1;
+
+  &__container {
+    color: white;
+    background: red;
+  }
+
+  & input {
+    display: none;
+  }
+}
