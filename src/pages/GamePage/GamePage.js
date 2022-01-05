@@ -5,7 +5,6 @@ import useSelected from "../../hooks/useSelected";
 import usePlayers from "../../hooks/usePlayers";
 import { useEffect } from "react";
 import Menu from "../../components/Menu/Menu";
-import Form from "../../components/Form/Form";
 
 function GamePage() {
   const { boardList, setMatchedCell, resetBoard } = useBoard();
@@ -87,7 +86,6 @@ function GamePage() {
           <Player player={player} key={player.name} />
         ))}
       </footer>
-      <Form onSubmit={onSubmit} onChange={onChange} />
     </>
   );
 }

@@ -32,6 +32,10 @@
     display: none;
   }
 
+  & input:checked + label {
+    background-color: $main-color;
+  }
+
   p {
     color: $main-color;
     font-weight: bold;
@@ -49,10 +53,6 @@
 
     &:nth-of-type(1) {
       margin-right: 15px;
-    }
-
-    &.selected {
-      background: $main-color;
     }
   }
 
