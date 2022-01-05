@@ -208,7 +208,9 @@ const boardReducer = (cells = gameList, action = {}) => {
       );
       break;
     case actionTypes.resetBoard:
-      cellsList = [...gameList].sort(() => Math.random() - 0.5);
+      cellsList = gameList
+        .map((cell) => ({ ...cell, isHidden: true }))
+        .sort(() => Math.random() - 0.5);
       break;
     default:
       cellsList = cells;

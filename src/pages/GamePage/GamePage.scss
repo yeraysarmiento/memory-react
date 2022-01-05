@@ -1,0 +1,50 @@
+button {
+  color: inherit;
+  border: none;
+  background: inherit;
+}
+
+header {
+  min-height: 50px;
+  padding: 15px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 15px;
+  grid-template-areas: "title title title restart";
+}
+
+footer {
+  padding: 40px 15px 20px 15px;
+  min-height: 100px;
+}
+
+main {
+  height: calc(100vh - 100px - 100px);
+  padding: 0 15px;
+}
+
+.title {
+  grid-area: title;
+  color: rgb(26, 41, 56);
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.players {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 15px;
+  grid-template-areas: "player1 player1 player2 player2";
+
+  & > div:nth-child(1) {
+    grid-area: player1;
+  }
+
+  & > div:nth-child(2) {
+    grid-area: player2;
+  }
+}

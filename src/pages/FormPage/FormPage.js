@@ -1,4 +1,5 @@
 import Form from "../../components/Form/Form";
+import "./FormPage.scss";
 
 function FormPage() {
   const onChange = (event) => {
@@ -13,7 +14,7 @@ function FormPage() {
   return (
     <>
       <header>
-        <h1 className="title">memory</h1>
+        <h1 className="title title--form">memory</h1>
       </header>
       <Form onSubmit={onSubmit} onChange={onChange} />
     </>

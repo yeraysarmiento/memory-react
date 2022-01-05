@@ -5,6 +5,7 @@ import useSelected from "../../hooks/useSelected";
 import usePlayers from "../../hooks/usePlayers";
 import { useEffect } from "react";
 import Menu from "../../components/Menu/Menu";
+import "./GamePage.scss";
 
 function GamePage() {
   const { boardList, setMatchedCell, resetBoard } = useBoard();
