@@ -15,8 +15,14 @@ export const setMatchedAction = (cell) => ({
   cell,
 });
 
-export const resetBoardAction = () => ({
+export const resetBoardAction = (board) => ({
   type: actionTypes.resetBoard,
+  board,
+});
+
+export const loadBoardAction = (board) => ({
+  type: actionTypes.loadBoard,
+  board,
 });
 
 export const addPlayerAction = (player) => ({

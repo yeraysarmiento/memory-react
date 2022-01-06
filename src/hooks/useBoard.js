@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
+  loadBoardAction,
   resetBoardAction,
   setMatchedAction,
 } from "../redux/actions/actionCreators";
+import { iconsList, numbersList } from "../assets/boardThemes";
 
 const useBoard = () => {
   const boardList = useSelector((store) => store.boardList);
@@ -12,13 +14,22 @@ const useBoard = () => {
     dispatch(setMatchedAction(cell));
   };
 
-  const resetBoard = () => {
-    dispatch(resetBoardAction());
+  const loadBoard = (boardTheme) => {
+    if (boardTheme === "icons") {
+      dispatch(loadBoardAction(iconsList));
+    } else {
+      dispatch(loadBoardAction(numbersList));
+    }
+  };
+
+  const resetBoard = (board) => {
+    dispatch(resetBoardAction(board));
   };
 
   return {
     boardList,
     setMatchedCell,
+    loadBoard,
     resetBoard,
   };
 };

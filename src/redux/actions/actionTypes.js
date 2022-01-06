@@ -2,6 +2,7 @@ const actionTypes = {
   addSelected: "ADD_SELECTED",
   removeSelected: "REMOVE_SELECTED",
   setMatched: "SET_MATCHED",
+  loadBoard: "LOAD_BOARD",
   resetBoard: "RESET_BOARD",
   addPlayer: "ADD_PLAYER",
   setTurn: "SET_TURN",
