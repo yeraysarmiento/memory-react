@@ -1,19 +1,6 @@
 import actionTypes from "../actions/actionTypes";
 
-const playersList = [
-  {
-    name: "Player 1",
-    points: 0,
-    isPlaying: true,
-  },
-  {
-    name: "Player 2",
-    points: 0,
-    isPlaying: false,
-  },
-];
-
-const playersReducer = (players = playersList, action = {}) => {
+const playersReducer = (players = [], action = {}) => {
   let playersList;
 
   switch (action.type) {
