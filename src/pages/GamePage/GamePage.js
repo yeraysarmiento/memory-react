@@ -13,7 +13,7 @@ function GamePage() {
   const { players, setTurn, addPoints, resetPoints } = usePlayers();
 
   const resetGame = () => {
-    resetBoard();
+    resetBoard(boardList);
     resetPoints();
     setTurn(players[0]);
   };
@@ -61,15 +61,6 @@ function GamePage() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCells]);
-
-  const onChange = (event) => {
-    console.log(event.target.value);
-  };
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-    console.log("submit");
-  };
 
   return (
     <>

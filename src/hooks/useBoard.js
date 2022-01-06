@@ -22,8 +22,8 @@ const useBoard = () => {
     }
   };
 
-  const resetBoard = () => {
-    dispatch(resetBoardAction());
+  const resetBoard = (board) => {
+    dispatch(resetBoardAction(board));
   };
 
   return {

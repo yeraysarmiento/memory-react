@@ -13,7 +13,7 @@ const boardReducer = (cells = [], action = {}) => {
       cellsList = action.board.sort(() => Math.random() - 0.5);
       break;
     case actionTypes.resetBoard:
-      cellsList = [...cellsList]
+      cellsList = action.board
         .map((cell) => ({ ...cell, isHidden: true }))
         .sort(() => Math.random() - 0.5);
       break;
