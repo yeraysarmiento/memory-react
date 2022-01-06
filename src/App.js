@@ -10,8 +10,6 @@ library.add(fab, faRedo);
 function App() {
   const { boardList } = useBoard();
 
-  console.log(boardList);
-
   return (
     <div className="app">
       {boardList.length === 0 ? <FormPage /> : <GamePage />}

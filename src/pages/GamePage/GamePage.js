@@ -35,10 +35,13 @@ function GamePage() {
     if (cellOne.content !== cellTwo.content) {
       removeSelectedCell(cellOne);
       removeSelectedCell(cellTwo);
-      if (players[0].isPlaying) {
-        setTurn(players[1]);
-      } else {
-        setTurn(players[0]);
+
+      if (players.length > 1) {
+        if (players[0].isPlaying) {
+          setTurn(players[1]);
+        } else {
+          setTurn(players[0]);
+        }
       }
     } else {
       setMatchedCell(cellOne);

@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Form from "../../components/Form/Form";
 import useBoard from "../../hooks/useBoard";
+import usePlayers from "../../hooks/usePlayers";
 import "./FormPage.scss";
 
 function FormPage() {
   const { loadBoard } = useBoard();
+  const { addPlayer } = usePlayers();
 
   const data = {
     theme: "",
@@ -29,7 +31,7 @@ function FormPage() {
   const onSubmit = (event) => {
     event.preventDefault();
     loadBoard(setup.theme);
-    console.log(setup);
+    addPlayer(+setup.players);
     if (setup.theme !== "" && setup.players !== "" && setup.gridSize !== "") {
     }
   };
