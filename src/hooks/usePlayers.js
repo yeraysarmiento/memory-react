@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   addPlayerAction,
   addPointsAction,
+  deletePlayersAction,
   resetPointsAction,
   setTurnAction,
 } from "../redux/actions/actionCreators";
@@ -25,6 +26,10 @@ const usePlayers = () => {
     dispatch(setTurnAction(player));
   };
 
+  const deletePlayers = () => {
+    dispatch(deletePlayersAction());
+  };
+
   const addPoints = useCallback(
     (player) => dispatch(addPointsAction(player)),
     [dispatch]
@@ -40,6 +45,7 @@ const usePlayers = () => {
     setTurn,
     addPoints,
     resetPoints,
+    deletePlayers,
   };
 };
 
