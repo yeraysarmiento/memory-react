@@ -3,14 +3,18 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faRedo } from "@fortawesome/free-solid-svg-icons";
 import FormPage from "./pages/FormPage/FormPage";
+import useBoard from "./hooks/useBoard";
 
 library.add(fab, faRedo);
 
 function App() {
+  const { boardList } = useBoard();
+
+  console.log(boardList);
+
   return (
     <div className="app">
-      <FormPage />
-      <GamePage />
+      {boardList.length === 0 ? <FormPage /> : <GamePage />}
     </div>
   );
 }

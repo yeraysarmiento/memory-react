@@ -1,8 +1,11 @@
 import { useState } from "react";
 import Form from "../../components/Form/Form";
+import useBoard from "../../hooks/useBoard";
 import "./FormPage.scss";
 
 function FormPage() {
+  const { loadBoard } = useBoard();
+
   const data = {
     theme: "",
     players: "",
@@ -25,6 +28,10 @@ function FormPage() {
 
   const onSubmit = (event) => {
     event.preventDefault();
+    loadBoard(setup.theme);
+    console.log(setup);
+    if (setup.theme !== "" && setup.players !== "" && setup.gridSize !== "") {
+    }
   };
 
   return (

@@ -19,6 +19,11 @@ export const resetBoardAction = () => ({
   type: actionTypes.resetBoard,
 });
 
+export const loadBoardAction = (board) => ({
+  type: actionTypes.loadBoard,
+  board,
+});
+
 export const addPlayerAction = (player) => ({
   type: actionTypes.addPlayer,
   player,
