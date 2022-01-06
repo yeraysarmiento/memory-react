@@ -1,11 +1,14 @@
 import PropTypes from "prop-types";
+import useBoard from "../../hooks/useBoard";
 import "./Cell.scss";
 
 function Cell({ cell, actionOnClick }) {
+  const { boardList } = useBoard();
+
   return cell.isHidden ? (
     <li className="cell">
       <button onClick={() => actionOnClick(cell)} type="button">
-        <span>{cell.content}</span>
+        <span className="cell__icon">{cell.content}</span>
       </button>
     </li>
   ) : (
@@ -13,7 +16,13 @@ function Cell({ cell, actionOnClick }) {
       className={cell.isMatched ? "cell cell--matched" : "cell cell--showing"}
     >
       <button onClick={() => actionOnClick(cell)} type="button">
-        <span>{cell.content}</span>
+        <span
+          className={
+            boardList.length === 16 ? "cell__icon s4x4" : "cell__icon s6x6"
+          }
+        >
+          {cell.content}
+        </span>
       </button>
     </li>
   );
