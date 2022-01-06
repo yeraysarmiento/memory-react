@@ -30,9 +30,9 @@ function FormPage() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    loadBoard(setup.theme);
-    addPlayer(+setup.players);
     if (setup.theme !== "" && setup.players !== "" && setup.gridSize !== "") {
+      loadBoard(setup.theme, +setup.gridSize);
+      addPlayer(+setup.players);
     }
   };
 

@@ -25,9 +25,9 @@ function Form({ onSubmit, onChange }) {
         </div>
         <p>Grid Size</p>
         <div className="game-form__box">
-          <input type="radio" name="board-size" value="4x4" id="4x4" />
+          <input type="radio" name="board-size" value="16" id="4x4" />
           <label htmlFor="4x4">4x4</label>
-          <input type="radio" name="board-size" value="6x6" id="6x6" />
+          <input type="radio" name="board-size" value="36" id="6x6" />
           <label htmlFor="6x6">6x6</label>
         </div>
         <button type="submit">Start Game</button>

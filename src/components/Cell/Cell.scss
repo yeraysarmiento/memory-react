@@ -13,25 +13,38 @@
     cursor: pointer;
   }
 
-  & span {
+  & .cell__icon {
     visibility: hidden;
     font-size: 40px;
+    font-family: "Karla";
+    color: white;
+    font-weight: bolder;
   }
 
   &--showing {
     color: white;
     background-color: $secondary-color;
 
-    & span {
+    & .cell__icon {
       visibility: visible;
+      margin: 0;
+      padding: 0;
+
+      &.s6x6 {
+        font-size: 30px;
+      }
     }
   }
 
   &--matched {
     background-color: $action-color;
 
-    & span {
+    & .cell__icon {
       visibility: visible;
+
+      &.s6x6 {
+        font-size: 30px;
+      }
     }
   }
 }

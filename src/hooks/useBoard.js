@@ -14,11 +14,11 @@ const useBoard = () => {
     dispatch(setMatchedAction(cell));
   };
 
-  const loadBoard = (boardTheme) => {
+  const loadBoard = (boardTheme, gridSize) => {
     if (boardTheme === "icons") {
-      dispatch(loadBoardAction(iconsList));
+      dispatch(loadBoardAction(iconsList.slice(0, gridSize)));
     } else {
-      dispatch(loadBoardAction(numbersList));
+      dispatch(loadBoardAction(numbersList.slice(0, gridSize)));
     }
   };
 

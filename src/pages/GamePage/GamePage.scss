@@ -36,7 +36,7 @@ main {
 .players {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4s, 1fr);
   column-gap: 15px;
   grid-template-areas: "player1 player1 player2 player2";
 
