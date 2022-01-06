@@ -16,6 +16,9 @@ const playersReducer = (players = [], action = {}) => {
         ),
       ];
       break;
+    case actionTypes.deletePlayers:
+      playersList = [];
+      break;
     case actionTypes.addPoints:
       playersList = [
         ...players.map((player) =>

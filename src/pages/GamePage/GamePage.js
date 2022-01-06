@@ -10,7 +10,8 @@ import "./GamePage.scss";
 function GamePage() {
   const { boardList, setMatchedCell, resetBoard, deleteBoard } = useBoard();
   const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
-  const { players, setTurn, addPoints, resetPoints } = usePlayers();
+  const { players, setTurn, addPoints, resetPoints, deletePlayers } =
+    usePlayers();
 
   const resetGame = () => {
     resetBoard(boardList);
@@ -20,6 +21,7 @@ function GamePage() {
 
   const restartGame = () => {
     deleteBoard();
+    deletePlayers();
   };
 
   const setPair = (cell) => {

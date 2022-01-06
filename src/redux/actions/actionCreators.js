@@ -34,6 +34,10 @@ export const addPlayerAction = (player) => ({
   player,
 });
 
+export const deletePlayersAction = () => ({
+  type: actionTypes.deletePlayers,
+});
+
 export const setTurnAction = (player) => ({
   type: actionTypes.setTurn,
   player,
