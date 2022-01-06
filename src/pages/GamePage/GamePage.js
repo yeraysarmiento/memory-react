@@ -8,7 +8,7 @@ import Menu from "../../components/Menu/Menu";
 import "./GamePage.scss";
 
 function GamePage() {
-  const { boardList, setMatchedCell, resetBoard } = useBoard();
+  const { boardList, setMatchedCell, resetBoard, deleteBoard } = useBoard();
   const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
   const { players, setTurn, addPoints, resetPoints } = usePlayers();
 
@@ -16,6 +16,10 @@ function GamePage() {
     resetBoard(boardList);
     resetPoints();
     setTurn(players[0]);
+  };
+
+  const restartGame = () => {
+    deleteBoard();
   };
 
   const setPair = (cell) => {
@@ -69,7 +73,7 @@ function GamePage() {
     <>
       <header>
         <h1 className="title">memory</h1>
-        <Menu onClick={resetGame} />
+        <Menu onReset={resetGame} onRestart={restartGame} />
       </header>
       <main>
         <div className="board-container">

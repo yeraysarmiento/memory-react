@@ -11,7 +11,7 @@ header {
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 15px;
-  grid-template-areas: "title title title restart";
+  grid-template-areas: "title title newgame restart";
 }
 
 footer {

@@ -4,6 +4,7 @@ const actionTypes = {
   setMatched: "SET_MATCHED",
   loadBoard: "LOAD_BOARD",
   resetBoard: "RESET_BOARD",
+  deleteBoard: "DELETE_BOARD",
   addPlayer: "ADD_PLAYER",
   setTurn: "SET_TURN",
   addPoints: "ADD_POINTS",

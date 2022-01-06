@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
+  deleteBoardAction,
   loadBoardAction,
   resetBoardAction,
   setMatchedAction,
@@ -26,11 +27,16 @@ const useBoard = () => {
     dispatch(resetBoardAction(board));
   };
 
+  const deleteBoard = () => {
+    dispatch(deleteBoardAction());
+  };
+
   return {
     boardList,
     setMatchedCell,
     loadBoard,
     resetBoard,
+    deleteBoard,
   };
 };
 
