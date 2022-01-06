@@ -1,12 +1,22 @@
 .board {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   width: 100%;
-  column-gap: 15px;
-  row-gap: 15px;
   list-style: none;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
+
+  &.board--4x4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+  }
+
+  &.board--6x6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+  }
 
   &-container {
     height: 100%;
