@@ -23,10 +23,10 @@
       grid-area: restart;
       color: white;
       background-color: rgb(243, 168, 63);
-      margin-right: 15px;
     }
 
     &--new-game {
+      grid-area: newgame;
       color: rgb(26, 41, 56);
       background-color: rgb(190, 206, 217);
     }

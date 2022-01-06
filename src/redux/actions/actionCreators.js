@@ -25,6 +25,10 @@ export const loadBoardAction = (board) => ({
   board,
 });
 
+export const deleteBoardAction = () => ({
+  type: actionTypes.deleteBoard,
+});
+
 export const addPlayerAction = (player) => ({
   type: actionTypes.addPlayer,
   player,
