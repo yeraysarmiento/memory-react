@@ -34,7 +34,7 @@ function App() {
       cell.isMatched ? true : false
     );
     if (checkedBoard.includes(false)) {
-      setIsRanking(false);
+      setIsRanking(true);
     } else {
       setIsRanking(true);
     }
