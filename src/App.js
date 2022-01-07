@@ -48,11 +48,13 @@ function App() {
       />
       {boardList.length === 0 ? <FormPage /> : <GamePage />}
       {isRanking && (
-        <Ranking
-          players={players}
-          onReset={resetGame}
-          onRestart={restartGame}
-        />
+        <>
+          <Ranking
+            players={players}
+            onReset={resetGame}
+            onRestart={restartGame}
+          />
+        </>
       )}
     </div>
   );
