@@ -21,12 +21,12 @@ function App() {
     resetBoard(boardList);
     resetPoints();
     setTurn(players[0]);
+    setIsRanking(false);
   };
 
   const restartGame = () => {
     deleteBoard();
     deletePlayers();
-    // setIsRanking(false);
   };
 
   useEffect(() => {

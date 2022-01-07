@@ -1,3 +1,5 @@
+@import "../../styles/colors.scss";
+
 .ranking {
   position: absolute;
   width: 100vw;
@@ -7,7 +9,7 @@
   align-items: center;
   justify-content: center;
   padding: 15px;
-  color: blue;
+  color: $main-color;
 
   &__container {
     width: 100%;
@@ -41,7 +43,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: lightgray;
+    background-color: $secondary-color;
     border-radius: 15px;
 
     &:nth-of-type(1) {
@@ -49,7 +51,7 @@
     }
 
     &.ranking__player--winner {
-      background-color: orange;
+      background-color: $action-color;
     }
   }
 
@@ -66,12 +68,12 @@
       height: 35px;
 
       &:nth-of-type(1) {
-        background-color: orange;
+        background-color: $action-color;
         margin-right: 10px;
       }
 
       &:nth-of-type(2) {
-        background-color: grey;
+        background-color: $secondary-color;
       }
     }
   }
