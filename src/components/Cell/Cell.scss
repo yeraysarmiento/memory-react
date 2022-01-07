@@ -1,4 +1,5 @@
 @import "../../styles/_colors.scss";
+@import "../../styles/sizes.scss";
 
 .cell {
   background: $main-color;
@@ -44,6 +45,30 @@
 
       &.s5x5 {
         font-size: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  .cell {
+    .cell__icon {
+      font-size: 60px;
+    }
+
+    &--showing {
+      & .cell__icon {
+        &.s5x5 {
+          font-size: 50px;
+        }
+      }
+    }
+
+    &--matched {
+      & .cell__icon {
+        &.s5x5 {
+          font-size: 50px;
+        }
       }
     }
   }
