@@ -14,7 +14,7 @@ const boardReducer = (cells = [], action = {}) => {
       break;
     case actionTypes.resetBoard:
       cellsList = action.board
-        .map((cell) => ({ ...cell, isHidden: true }))
+        .map((cell) => ({ ...cell, isHidden: true, isMatched: false }))
         .sort(() => Math.random() - 0.5);
       break;
     case actionTypes.deleteBoard:
