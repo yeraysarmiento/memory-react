@@ -68,6 +68,12 @@ main {
 
   .players {
     max-width: 1080px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "x x x player1 player2";
+
+    &.players--1-player {
+      grid-template-areas: "x x x player1 player1";
+    }
   }
 
   .board {

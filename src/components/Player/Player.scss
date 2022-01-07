@@ -10,11 +10,8 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   cursor: pointer;
-
-  & p {
-    width: 100%;
-  }
 
   &__points {
     font-size: 22px;
