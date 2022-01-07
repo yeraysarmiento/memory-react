@@ -1,3 +1,5 @@
+@import "../../styles/sizes.scss";
+
 button {
   color: inherit;
   border: none;
@@ -6,7 +8,7 @@ button {
 
 header {
   min-height: 50px;
-  padding: 15px;
+  padding: 15px 15px 40px 15px;
   width: 100%;
 }
 
@@ -41,5 +43,19 @@ main {
     & .player__pointer {
       display: none;
     }
+  }
+}
+
+@media (min-width: $tablet) {
+  main {
+    padding: 0 50px;
+  }
+
+  header {
+    padding: 25px 50px 40px 50px;
+  }
+
+  .players {
+    padding: 40px 50px 25px 50px;
   }
 }

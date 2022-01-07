@@ -4,7 +4,7 @@ import "./Ranking.scss";
 
 function Ranking({ players, onReset, onRestart }) {
   const [isTied, setIsTied] = useState(false);
-  const rankingList = players.sort((player1, player2) => {
+  const rankingList = [...players].sort((player1, player2) => {
     return player2.points - player1.points;
   });
 
