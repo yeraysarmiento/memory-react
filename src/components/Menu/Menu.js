@@ -9,11 +9,17 @@ function Menu({ onReset, onRestart, isPlaying }) {
       {isPlaying && (
         <ul className="menu">
           <li className="menu__element menu__element--new-game">
-            <button onClick={onRestart}>+</button>
+            <button onClick={onRestart}>
+              <span>+</span>
+              <span>New Game</span>
+            </button>
           </li>
           <li className="menu__element menu__element--restart">
             <button onClick={onReset}>
-              <FontAwesomeIcon icon="redo" />
+              <span>
+                <FontAwesomeIcon icon="redo" />
+              </span>
+              <span>Restart</span>
             </button>
           </li>
         </ul>
