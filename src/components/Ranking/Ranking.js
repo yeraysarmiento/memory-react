@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
+import Fireworks from "../Fireworks";
 import "./Ranking.scss";
 
 function Ranking({ players, onReset, onRestart }) {
@@ -18,6 +19,7 @@ function Ranking({ players, onReset, onRestart }) {
 
   return (
     <section className="ranking">
+      <Fireworks />
       <div className="ranking__container">
         <div className="ranking__winner">
           {players.length === 1 ? (

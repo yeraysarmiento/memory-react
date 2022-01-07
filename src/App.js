@@ -26,18 +26,21 @@ function App() {
   const restartGame = () => {
     deleteBoard();
     deletePlayers();
+    setIsRanking(false);
   };
 
   useEffect(() => {
     const checkedBoard = boardList.map((cell) =>
       cell.isMatched ? true : false
     );
-    if (checkedBoard.includes(false)) {
+    if (checkedBoard.includes(false) || boardList.length === 0) {
+      console.log(1);
       setIsRanking(false);
     } else {
+      console.log(2);
       setIsRanking(true);
     }
-  }, [boardList]);
+  }, [boardList, isRanking]);
 
   return (
     <div className="app">
@@ -48,11 +51,13 @@ function App() {
       />
       {boardList.length === 0 ? <FormPage /> : <GamePage />}
       {isRanking && (
-        <Ranking
-          players={players}
-          onReset={resetGame}
-          onRestart={restartGame}
-        />
+        <>
+          <Ranking
+            players={players}
+            onReset={resetGame}
+            onRestart={restartGame}
+          />
+        </>
       )}
     </div>
   );
