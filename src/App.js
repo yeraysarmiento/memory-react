@@ -6,7 +6,6 @@ import FormPage from "./pages/FormPage/FormPage";
 import useBoard from "./hooks/useBoard";
 import usePlayers from "./hooks/usePlayers";
 import Menu from "./components/Menu/Menu";
-import "@fontsource/karla";
 import { useEffect, useState } from "react";
 import Ranking from "./components/Ranking/Ranking";
 
