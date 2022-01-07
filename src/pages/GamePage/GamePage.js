@@ -65,7 +65,11 @@ function GamePage() {
           <Board boardList={boardList} onPair={setPair} />
         </div>
       </main>
-      <footer className="players">
+      <footer
+        className={
+          players.length === 1 ? "players players--1-player" : "players"
+        }
+      >
         {players.map((player) => (
           <Player player={player} key={player.name} />
         ))}

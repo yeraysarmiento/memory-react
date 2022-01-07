@@ -6,7 +6,7 @@ function Board({ boardList, onPair }) {
   return (
     <ul
       className={
-        boardList.length === 16 ? "board board--4x4" : "board board--6x6"
+        boardList.length === 16 ? "board board--4x4" : "board board--5x5"
       }
     >
       {boardList.map((cell) => (

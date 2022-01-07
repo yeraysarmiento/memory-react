@@ -11,8 +11,8 @@
     row-gap: 15px;
   }
 
-  &.board--6x6 {
-    grid-template-columns: repeat(6, 1fr);
+  &.board--5x5 {
+    grid-template-columns: repeat(5, 1fr);
     column-gap: 10px;
     row-gap: 10px;
   }
