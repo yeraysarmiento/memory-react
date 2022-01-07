@@ -4,6 +4,10 @@
   width: 100%;
   font-size: 12px;
   height: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 15px;
+  grid-template-areas: "x x restart newgame";
 
   & button {
     width: 100%;
@@ -31,17 +35,21 @@
       grid-area: newgame;
       color: rgb(26, 41, 56);
       background-color: rgb(190, 206, 217);
+
+      & button {
+        font-size: 30px;
+      }
     }
   }
 }
 
 .title {
-  grid-area: title;
   color: rgb(26, 41, 56);
   font-size: 25px;
   margin-bottom: 20px;
   text-decoration: underline;
   text-underline-offset: 6px;
+  position: absolute;
 
   &.title--form {
     color: white;

@@ -27,8 +27,8 @@ function Form({ onSubmit, onChange }) {
         <div className="game-form__box">
           <input type="radio" name="board-size" value="16" id="4x4" />
           <label htmlFor="4x4">4x4</label>
-          <input type="radio" name="board-size" value="36" id="6x6" />
-          <label htmlFor="6x6">6x6</label>
+          <input type="radio" name="board-size" value="25" id="5x5" />
+          <label htmlFor="5x5">5x5</label>
         </div>
         <button type="submit">Start Game</button>
       </form>

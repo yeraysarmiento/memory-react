@@ -8,10 +8,6 @@ header {
   min-height: 50px;
   padding: 15px;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 15px;
-  grid-template-areas: "title title newgame restart";
 }
 
 footer {
@@ -27,7 +23,7 @@ main {
 .players {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4s, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 15px;
   grid-template-areas: "player1 player1 player2 player2";
 
@@ -37,5 +33,13 @@ main {
 
   & > div:nth-child(2) {
     grid-area: player2;
+  }
+
+  &.players--1-player {
+    grid-template-areas: "x x player1 player1";
+
+    & .player__pointer {
+      display: none;
+    }
   }
 }

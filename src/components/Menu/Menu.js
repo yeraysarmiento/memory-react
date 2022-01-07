@@ -9,7 +9,7 @@ function Menu({ onReset, onRestart, isPlaying }) {
       {isPlaying && (
         <ul className="menu">
           <li className="menu__element menu__element--new-game">
-            <button onClick={onRestart}>New Game</button>
+            <button onClick={onRestart}>+</button>
           </li>
           <li className="menu__element menu__element--restart">
             <button onClick={onReset}>

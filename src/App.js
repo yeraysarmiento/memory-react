@@ -6,6 +6,7 @@ import FormPage from "./pages/FormPage/FormPage";
 import useBoard from "./hooks/useBoard";
 import usePlayers from "./hooks/usePlayers";
 import Menu from "./components/Menu/Menu";
+import "@fontsource/karla";
 
 library.add(fab, faRedo);
 

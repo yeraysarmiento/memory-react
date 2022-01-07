@@ -17,7 +17,7 @@ function Cell({ cell, actionOnClick }) {
     >
       <button onClick={() => actionOnClick(cell)} type="button">
         <span
-          className={boardList.length === 16 ? "cell__icon" : "cell__icon s6x6"}
+          className={boardList.length === 16 ? "cell__icon" : "cell__icon s5x5"}
         >
           {cell.content}
         </span>
