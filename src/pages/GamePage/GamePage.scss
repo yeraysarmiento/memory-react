@@ -20,6 +20,7 @@ footer {
 main {
   height: calc(100vh - 60px - 100px);
   padding: 0 15px;
+  width: 100%;
 }
 
 .players {
@@ -57,5 +58,19 @@ main {
 
   .players {
     padding: 40px 50px 25px 50px;
+  }
+}
+
+@media (min-width: $desktop) {
+  header {
+    max-width: 1080px;
+  }
+
+  .players {
+    max-width: 1080px;
+  }
+
+  .board {
+    max-width: 600px;
   }
 }
