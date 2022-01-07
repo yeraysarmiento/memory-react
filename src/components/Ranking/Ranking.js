@@ -20,8 +20,18 @@ function Ranking({ players, onReset, onRestart }) {
     <section className="ranking">
       <div className="ranking__container">
         <div className="ranking__winner">
-          {isTied ? <h3>Tied Game!</h3> : <h3>{winner?.name} wins!</h3>}
-          <p>Game over! Here are the results: </p>
+          {players.length === 1 ? (
+            <h3>Congratulations!</h3>
+          ) : isTied ? (
+            <h3>Tied Game!</h3>
+          ) : (
+            <h3>{winner?.name} wins!</h3>
+          )}
+          {players.length === 1 ? (
+            <p>Here are your results: </p>
+          ) : (
+            <p>Game over! Here are the results: </p>
+          )}
         </div>
         <ul className="ranking__list">
           {rankingList.map((player) => (
