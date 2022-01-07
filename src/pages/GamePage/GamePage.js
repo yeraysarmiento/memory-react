@@ -4,25 +4,12 @@ import useBoard from "../../hooks/useBoard";
 import useSelected from "../../hooks/useSelected";
 import usePlayers from "../../hooks/usePlayers";
 import { useEffect } from "react";
-import Menu from "../../components/Menu/Menu";
 import "./GamePage.scss";
 
 function GamePage() {
-  const { boardList, setMatchedCell, resetBoard, deleteBoard } = useBoard();
+  const { boardList, setMatchedCell } = useBoard();
   const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
-  const { players, setTurn, addPoints, resetPoints, deletePlayers } =
-    usePlayers();
-
-  const resetGame = () => {
-    resetBoard(boardList);
-    resetPoints();
-    setTurn(players[0]);
-  };
-
-  const restartGame = () => {
-    deleteBoard();
-    deletePlayers();
-  };
+  const { players, setTurn, addPoints } = usePlayers();
 
   const setPair = (cell) => {
     if (!cell.isMatched) {
@@ -73,10 +60,6 @@ function GamePage() {
 
   return (
     <>
-      <header>
-        <h1 className="title">memory</h1>
-        <Menu onReset={resetGame} onRestart={restartGame} />
-      </header>
       <main>
         <div className="board-container">
           <Board boardList={boardList} onPair={setPair} />
