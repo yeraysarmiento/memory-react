@@ -7,8 +7,8 @@ button {
 header {
   min-height: 50px;
   padding: 15px;
-  display: grid;
   width: 100%;
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 15px;
   grid-template-areas: "title title newgame restart";
@@ -22,15 +22,6 @@ footer {
 main {
   height: calc(100vh - 100px - 100px);
   padding: 0 15px;
-}
-
-.title {
-  grid-area: title;
-  color: rgb(26, 41, 56);
-  font-size: 25px;
-  margin-bottom: 20px;
-  text-decoration: underline;
-  text-underline-offset: 6px;
 }
 
 .players {

@@ -2,7 +2,6 @@ import { useState } from "react";
 import Form from "../../components/Form/Form";
 import useBoard from "../../hooks/useBoard";
 import usePlayers from "../../hooks/usePlayers";
-import "./FormPage.scss";
 
 function FormPage() {
   const { loadBoard } = useBoard();
@@ -36,14 +35,7 @@ function FormPage() {
     }
   };
 
-  return (
-    <>
-      <header>
-        <h1 className="title title--form">memory</h1>
-      </header>
-      <Form onSubmit={onSubmit} onChange={onChange} />
-    </>
-  );
+  return <Form onSubmit={onSubmit} onChange={onChange} />;
 }
 
 export default FormPage;

@@ -1,3 +1,5 @@
+@import "../../styles/_colors.scss";
+
 .menu {
   width: 100%;
   font-size: 12px;
@@ -30,5 +32,19 @@
       color: rgb(26, 41, 56);
       background-color: rgb(190, 206, 217);
     }
+  }
+}
+
+.title {
+  grid-area: title;
+  color: rgb(26, 41, 56);
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+
+  &.title--form {
+    color: white;
+    z-index: 2;
   }
 }
