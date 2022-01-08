@@ -30,11 +30,11 @@ main {
   column-gap: 15px;
   grid-template-areas: "player1 player1 player2 player2";
 
-  & > div:nth-child(1) {
+  & > article:nth-child(1) {
     grid-area: player1;
   }
 
-  & > div:nth-child(2) {
+  & > article:nth-child(2) {
     grid-area: player2;
   }
 
