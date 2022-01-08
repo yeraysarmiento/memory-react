@@ -3,14 +3,19 @@ import Cell from "../Cell/Cell";
 import "./Board.scss";
 
 function Board({ boardList, onPair }) {
+  const boardLength = boardList.length;
+
   return (
     <ul
-      className={
-        boardList.length === 16 ? "board board--4x4" : "board board--5x5"
-      }
+      className={boardLength === 16 ? "board board--4x4" : "board board--5x5"}
     >
       {boardList.map((cell) => (
-        <Cell cell={cell} key={cell.id} actionOnClick={onPair} />
+        <Cell
+          cell={cell}
+          key={cell.id}
+          actionOnClick={onPair}
+          boardLength={boardLength}
+        />
       ))}
     </ul>
   );
