@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import ReactCanvasConfetti from "react-canvas-confetti";
-import useBoard from "../hooks/useBoard";
+import useBoard from "../../hooks/useBoard";
 
 function randomInRange(min, max) {
   return Math.random() * (max - min) + min;
