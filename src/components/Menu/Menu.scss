@@ -15,6 +15,15 @@
     height: 100%;
     border-radius: 30px;
     cursor: pointer;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px,
+        rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
   }
 
   &__element {
