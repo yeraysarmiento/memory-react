@@ -55,9 +55,16 @@
     "register-service-worker": "^1.7.2"
   },
   "jest": {
+    "collectCoverage": true,
     "moduleNameMapper": {
       "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     },
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/*/*/Fireworks.js",
+      "!src/*.js",
+      "!src/assets/*.js"
+    ]
   }
 }
