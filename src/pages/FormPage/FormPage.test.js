@@ -39,7 +39,7 @@ describe("Given a FormPage function", () => {
 
       userEvent.click(inputIcons);
       userEvent.click(input1Player);
-      userEvent.click(input4x4);
+      userEvent.click(input5x5);
       userEvent.click(button);
     });
   });
