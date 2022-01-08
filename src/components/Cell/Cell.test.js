@@ -21,7 +21,7 @@ describe("Given a Cell function", () => {
 
       render(
         <Provider store={store}>
-          <Cell cell={cell} actionOnClick={onClick} />
+          <Cell cell={cell} actionOnClick={onClick} boardLength={16} />
         </Provider>
       );
 
@@ -41,7 +41,7 @@ describe("Given a Cell function", () => {
 
         render(
           <Provider store={store}>
-            <Cell cell={cell} actionOnClick={onClick} />
+            <Cell cell={cell} actionOnClick={onClick} boardLength={16} />
           </Provider>
         );
 
@@ -63,7 +63,7 @@ describe("Given a Cell function", () => {
 
         render(
           <Provider store={store}>
-            <Cell cell={cell} actionOnClick={onClick} />
+            <Cell cell={cell} actionOnClick={onClick} boardLength={16} />
           </Provider>
         );
 
@@ -84,7 +84,7 @@ describe("Given a Cell function", () => {
 
         render(
           <Provider store={store}>
-            <Cell cell={cell} actionOnClick={onClick} />
+            <Cell cell={cell} actionOnClick={onClick} boardLength={16} />
           </Provider>
         );
 
@@ -104,7 +104,7 @@ describe("Given a Cell function", () => {
 
           render(
             <Provider store={store}>
-              <Cell cell={cell} actionOnClick={onClick} />
+              <Cell cell={cell} actionOnClick={onClick} boardLength={16} />
             </Provider>
           );
 
@@ -113,6 +113,46 @@ describe("Given a Cell function", () => {
 
           expect(onClick).toHaveBeenCalled();
         });
+      });
+    });
+    describe("And the cellStyle length is 16", () => {
+      test("Then it should render a <span> tag with a class 'cell__icon'", () => {
+        const onClick = jest.fn();
+        const cell = {
+          content: "icon",
+          isHidden: false,
+          isMatched: false,
+        };
+
+        render(
+          <Provider store={store}>
+            <Cell cell={cell} actionOnClick={onClick} boardLength={16} />
+          </Provider>
+        );
+
+        const spanCell = screen.getByText("icon");
+
+        expect(spanCell).not.toHaveClass("cell__icon s5x5");
+      });
+    });
+    describe("And the boardList length is not 16", () => {
+      test("Then it should render a <span> tag with a class 'cell__icon s5x5'", () => {
+        const onClick = jest.fn();
+        const cell = {
+          content: "icon",
+          isHidden: false,
+          isMatched: false,
+        };
+
+        render(
+          <Provider store={store}>
+            <Cell cell={cell} actionOnClick={onClick} boardLength={25} />
+          </Provider>
+        );
+
+        const spanCell = screen.getByText("icon");
+
+        expect(spanCell).toHaveClass("cell__icon s5x5");
       });
     });
   });
