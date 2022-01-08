@@ -83,5 +83,118 @@ describe("Given a Board function", () => {
         expect(onPair).toHaveBeenCalled();
       });
     });
+    describe("And its length is 16", () => {
+      test("Then it should render a <ul> tag with a class 'board--4x4'", () => {
+        const boardList = [
+          {
+            id: 1,
+            content: "🦊",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 2,
+            content: "🐮",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 3,
+            content: "🐷",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 4,
+            content: "🦁",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 5,
+            content: "🐯",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 6,
+            content: "🐨",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 7,
+            content: "🐙",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 8,
+            content: "🐵",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 9,
+            content: "🦊",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 10,
+            content: "🐮",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 11,
+            content: "🐷",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 12,
+            content: "🦁",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 13,
+            content: "🐯",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 14,
+            content: "🐨",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 15,
+            content: "🐙",
+            isMatched: false,
+            isHidden: true,
+          },
+          {
+            id: 16,
+            content: "🐵",
+            isMatched: false,
+            isHidden: true,
+          },
+        ];
+        const onPair = jest.fn();
+
+        render(
+          <Provider store={store}>
+            <Board boardList={boardList} onPair={onPair} />
+          </Provider>
+        );
+
+        const list = screen.getByRole("list", "");
+
+        expect(list).toHaveClass("board--4x4");
+      });
+    });
   });
 });
