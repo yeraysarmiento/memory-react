@@ -34,10 +34,8 @@ function App() {
       cell.isMatched ? true : false
     );
     if (checkedBoard.includes(false) || boardList.length === 0) {
-      console.log(1);
       setIsRanking(false);
     } else {
-      console.log(2);
       setIsRanking(true);
     }
   }, [boardList, isRanking]);
