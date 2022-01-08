@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import Fireworks from "../Fireworks";
+import Fireworks from "../Fireworks/Fireworks";
 import "./Ranking.scss";
 
 function Ranking({ players, onReset, onRestart }) {
@@ -18,7 +18,7 @@ function Ranking({ players, onReset, onRestart }) {
   }, [rankingList, setIsTied]);
 
   return (
-    <section className="ranking">
+    <article className="ranking">
       <Fireworks />
       <div className="ranking__container">
         <div className="ranking__winner">
@@ -55,7 +55,7 @@ function Ranking({ players, onReset, onRestart }) {
           <button onClick={onRestart}>New Game</button>
         </div>
       </div>
-    </section>
+    </article>
   );
 }
 
