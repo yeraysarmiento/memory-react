@@ -50,6 +50,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
+    "@testing-library/react-hooks": "^7.0.2",
     "eslint-config-prettier": "^8.3.0",
     "redux-devtools-extension": "^2.13.9",
     "register-service-worker": "^1.7.2"
@@ -64,7 +65,8 @@
       "src/**/*.js",
       "!src/*/*/Fireworks.js",
       "!src/*.js",
-      "!src/assets/*.js"
+      "!src/assets/*.js",
+      "!src/hooks/*.js"
     ]
   }
 }
