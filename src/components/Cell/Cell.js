@@ -12,7 +12,7 @@ function Cell({ cell, actionOnClick, boardLength }) {
           : "cell cell--showing"
       }
     >
-      <div className="content">
+      <div className="content border">
         <button
           onClick={() => actionOnClick(cell)}
           className="cell__back"
