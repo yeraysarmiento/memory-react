@@ -2,21 +2,27 @@ import PropTypes from "prop-types";
 import "./Cell.scss";
 
 function Cell({ cell, actionOnClick, boardLength }) {
-  return cell.isHidden ? (
-    <li className="cell">
-      <button onClick={() => actionOnClick(cell)} type="button">
-        <span className="cell__icon">{cell.content}</span>
-      </button>
-    </li>
-  ) : (
+  return (
     <li
-      className={cell.isMatched ? "cell cell--matched" : "cell cell--showing"}
+      className={
+        cell.isHidden
+          ? "cell"
+          : cell.isMatched
+          ? "cell cell--matched"
+          : "cell cell--showing"
+      }
     >
-      <button onClick={() => actionOnClick(cell)} type="button">
-        <span className={boardLength === 16 ? "cell__icon" : "cell__icon s5x5"}>
+      <div className="content">
+        <button
+          onClick={() => actionOnClick(cell)}
+          className="cell__back"
+        ></button>
+        <div
+          className={boardLength === 16 ? "cell__front" : "cell__front s5x5"}
+        >
           {cell.content}
-        </span>
-      </button>
+        </div>
+      </div>
     </li>
   );
 }
