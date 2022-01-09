@@ -64,7 +64,15 @@ function GamePage() {
         <div className="board-container">
           <Board boardList={boardList} onPair={setPair} />
         </div>
+
+        {/* <div class="card">
+          <div class="content">
+            <div class="back"></div>
+            <div class="front">Front</div>
+          </div>
+        </div> */}
       </main>
+
       <footer
         className={
           players.length === 1 ? "players players--1-player" : "players"
