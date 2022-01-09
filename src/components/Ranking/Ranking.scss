@@ -70,6 +70,7 @@
       height: 35px;
       font-weight: bolder;
       font-family: inherit;
+      cursor: pointer;
 
       &:nth-of-type(1) {
         background-color: $action-color;
