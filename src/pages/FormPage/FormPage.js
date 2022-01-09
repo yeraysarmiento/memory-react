@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Form from "../../components/Form/Form";
 import useBoard from "../../hooks/useBoard";
 import usePlayers from "../../hooks/usePlayers";
+import "./FormPage.scss";
 
 function FormPage() {
   const { loadBoard } = useBoard();
   const { addPlayer } = usePlayers();
+  const [presentationPage, setPresentationPage] = useState(true);
 
   const data = {
     theme: "",
@@ -35,7 +37,24 @@ function FormPage() {
     }
   };
 
-  return <Form onSubmit={onSubmit} onChange={onChange} />;
+  useEffect(() => {
+    setTimeout(() => {
+      setPresentationPage(false);
+    }, 1000);
+  });
+
+  return presentationPage ? (
+    <div className="presentation-container">
+      <img
+        className="presentation-icon"
+        src="./icon-512x512.png"
+        alt="memory logo"
+        width="100"
+      />
+    </div>
+  ) : (
+    <Form onSubmit={onSubmit} onChange={onChange} />
+  );
 }
 
 export default FormPage;
