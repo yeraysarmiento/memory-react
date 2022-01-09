@@ -5,11 +5,22 @@ import useSelected from "../../hooks/useSelected";
 import usePlayers from "../../hooks/usePlayers";
 import { useEffect } from "react";
 import "./GamePage.scss";
+import { Howl } from "howler";
+import wrongAnswer from "../../assets/soundEffects/wrongAnswer.mp3";
+import rightAnswer from "../../assets/soundEffects/rightAnswer.mp3";
 
 function GamePage() {
   const { boardList, setMatchedCell } = useBoard();
   const { selectedCells, addSelectedCell, removeSelectedCell } = useSelected();
   const { players, setTurn, addPoints } = usePlayers();
+
+  const soundPlay = (sound) => {
+    const audioToPlay = new Howl({
+      src: [sound],
+    });
+
+    audioToPlay.play();
+  };
 
   const setPair = (cell) => {
     if (!cell.isMatched) {
@@ -26,6 +37,7 @@ function GamePage() {
     const cellTwo = cells[1];
 
     if (cellOne.content !== cellTwo.content) {
+      soundPlay(wrongAnswer);
       removeSelectedCell(cellOne);
       removeSelectedCell(cellTwo);
 
@@ -37,6 +49,8 @@ function GamePage() {
         }
       }
     } else {
+      soundPlay(rightAnswer);
+
       setMatchedCell(cellOne);
       setMatchedCell(cellTwo);
       removeSelectedCell(cellOne);
