@@ -52,6 +52,7 @@ footer {
 
 @media (min-width: $tablet) {
   main {
+    height: calc(100vh - 125px - 145px);
     padding: 0 50px;
   }
 
@@ -59,8 +60,8 @@ footer {
     padding: 25px 50px 40px 50px;
   }
 
-  .players {
-    padding: 40px 50px 50px 50px;
+  footer {
+    padding: 40px 50px 25px 50px;
   }
 }
 
