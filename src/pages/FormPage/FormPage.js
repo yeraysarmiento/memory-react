@@ -7,7 +7,6 @@ import "./FormPage.scss";
 function FormPage() {
   const { loadBoard } = useBoard();
   const { addPlayer } = usePlayers();
-  const [presentationPage, setPresentationPage] = useState(true);
 
   const data = {
     theme: "",
@@ -37,28 +36,7 @@ function FormPage() {
     }
   };
 
-  const timerPresentation = () => {
-    setTimeout(() => {
-      setPresentationPage(false);
-    }, 1000);
-  };
-
-  useEffect(() => {
-    timerPresentation();
-  });
-
-  return presentationPage ? (
-    <div className="presentation-container">
-      <img
-        className="presentation-icon"
-        src="./icon-512x512.png"
-        alt="memory logo"
-        width="100"
-      />
-    </div>
-  ) : (
-    <Form onSubmit={onSubmit} onChange={onChange} />
-  );
+  return <Form onSubmit={onSubmit} onChange={onChange} />;
 }
 
 export default FormPage;

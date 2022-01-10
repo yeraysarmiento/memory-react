@@ -16,6 +16,7 @@ function App() {
   const { players, setTurn, resetPoints, deletePlayers } = usePlayers();
   const { boardList, resetBoard, deleteBoard } = useBoard();
   const [isRanking, setIsRanking] = useState(false);
+  const [presentationPage, setPresentationPage] = useState(true);
 
   const resetGame = () => {
     resetBoard(boardList);
@@ -41,25 +42,48 @@ function App() {
     }
   }, [boardList, isRanking]);
 
+  const timerPresentation = () => {
+    setTimeout(() => {
+      setPresentationPage(false);
+    }, 1000);
+  };
+
+  useEffect(() => {
+    timerPresentation();
+  });
+
   return (
     <div className="app">
-      <div className="rotation-container">
-        <FontAwesomeIcon icon="sync-alt" />
-        <p>Rotate your phone!</p>
-      </div>
-      <Menu
-        onReset={resetGame}
-        onRestart={restartGame}
-        isPlaying={boardList.length !== 0}
-      />
-      {boardList.length === 0 ? <FormPage /> : <GamePage />}
-      {isRanking && (
+      {presentationPage ? (
+        <div className="presentation-container">
+          <img
+            className="presentation-icon"
+            src="./icon-512x512.png"
+            alt="memory logo"
+            width="100"
+          />
+        </div>
+      ) : (
         <>
-          <Ranking
-            players={players}
+          <div className="rotation-container">
+            <FontAwesomeIcon icon="sync-alt" />
+            <p>Rotate your phone!</p>
+          </div>
+          <Menu
             onReset={resetGame}
             onRestart={restartGame}
+            isPlaying={boardList.length !== 0}
           />
+          {boardList.length === 0 ? <FormPage /> : <GamePage />}
+          {isRanking && (
+            <>
+              <Ranking
+                players={players}
+                onReset={resetGame}
+                onRestart={restartGame}
+              />
+            </>
+          )}
         </>
       )}
     </div>
