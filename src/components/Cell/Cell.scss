@@ -52,11 +52,15 @@
   justify-content: center;
   align-items: center;
   transform: rotateY(180deg);
-  font-size: 50px;
+  font-size: 40px;
 }
 
 @media (min-width: $tablet) {
   .cell__front {
-    font-size: 60px;
+    font-size: 70px;
+
+    &.s5x5 {
+      font-size: 60px;
+    }
   }
 }
