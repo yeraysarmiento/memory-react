@@ -8,6 +8,7 @@ import usePlayers from "./hooks/usePlayers";
 import Menu from "./components/Menu/Menu";
 import { useEffect, useState } from "react";
 import Ranking from "./components/Ranking/Ranking";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 library.add(fab, faRedo, faSyncAlt);
 
@@ -42,6 +43,10 @@ function App() {
 
   return (
     <div className="app">
+      <div className="rotation-container">
+        <FontAwesomeIcon icon="sync-alt" />
+        <p>Rotate your phone!</p>
+      </div>
       <Menu
         onReset={resetGame}
         onRestart={restartGame}

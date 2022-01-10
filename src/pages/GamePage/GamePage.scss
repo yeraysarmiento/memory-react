@@ -55,7 +55,7 @@ footer {
   }
 }
 
-@media (min-width: $phone) {
+@media (min-width: $tablet) {
   main {
     height: calc(100vh - 125px - 155px);
     padding: 0 50px;
@@ -70,7 +70,7 @@ footer {
   }
 }
 
-@media (max-width: $phone) and (orientation: landscape) {
+@media (min-width: $tablet) and (max-width: $laptop) and (orientation: landscape) {
   .rotation-container {
     display: block;
     background: $action-color;

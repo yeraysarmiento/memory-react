@@ -76,7 +76,7 @@
   }
 }
 
-@media (min-width: $phone) {
+@media (min-width: $tablet) {
   .menu {
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas: "x x x restart newgame";
