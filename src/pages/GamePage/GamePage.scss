@@ -13,7 +13,7 @@ header {
 }
 
 main {
-  height: calc(100vh - 90px - 110px);
+  height: calc(100vh - 90px - 120px);
   padding: 0 15px;
   width: 100%;
 }
@@ -52,7 +52,7 @@ footer {
 
 @media (min-width: $phone) {
   main {
-    height: calc(100vh - 125px - 145px);
+    height: calc(100vh - 125px - 155px);
     padding: 0 50px;
   }
 

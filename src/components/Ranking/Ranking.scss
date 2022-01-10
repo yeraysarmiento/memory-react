@@ -63,7 +63,6 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    font-size: 14px;
 
     & button {
       width: 100%;
@@ -72,6 +71,7 @@
       font-weight: bolder;
       font-family: inherit;
       cursor: pointer;
+      font-size: 16px;
 
       &:nth-of-type(1) {
         background-color: $action-color;
