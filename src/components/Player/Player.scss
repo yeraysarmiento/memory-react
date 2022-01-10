@@ -6,11 +6,12 @@
   width: 100%;
   height: auto;
   border-radius: 15px;
-  padding: 15px;
+  padding: 5px 15px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
 
   &__points {
     font-size: 22px;

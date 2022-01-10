@@ -80,14 +80,16 @@ function GamePage() {
         </div>
       </main>
 
-      <footer
-        className={
-          players.length === 1 ? "players players--1-player" : "players"
-        }
-      >
-        {players.map((player) => (
-          <Player player={player} key={player.name} />
-        ))}
+      <footer>
+        <ul
+          className={
+            players.length === 1 ? "players players--1-player" : "players"
+          }
+        >
+          {players.map((player) => (
+            <Player player={player} key={player.name} />
+          ))}
+        </ul>
       </footer>
     </>
   );
