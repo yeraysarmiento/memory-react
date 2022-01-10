@@ -1,10 +1,12 @@
+@import "../../styles/sizes.scss";
+@import "../../styles/colors.scss";
+
 .board {
   width: 100%;
   list-style: none;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
   display: grid;
-  max-height: 100%;
 
   &.board--4x4 {
     grid-template-columns: repeat(4, 1fr);
@@ -19,9 +21,19 @@
   }
 
   &-container {
+    max-height: calc(100vh - 125px - 145px);
     height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media (min-width: $phone) and (orientation: landscape) {
+  .board {
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1 / 1;
   }
 }

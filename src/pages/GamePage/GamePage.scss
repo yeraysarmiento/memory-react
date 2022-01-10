@@ -70,7 +70,7 @@ footer {
   }
 }
 
-@media (min-width: $phone) and (orientation: landscape) {
+@media (max-width: $phone) and (orientation: landscape) {
   .rotation-container {
     display: block;
     background: $action-color;
