@@ -1,4 +1,9 @@
 @import "../../styles/sizes.scss";
+@import "../../styles/colors.scss";
+
+.rotation-container {
+  display: none;
+}
 
 button {
   color: inherit;
@@ -62,6 +67,28 @@ footer {
 
   footer {
     padding: 40px 50px 25px 50px;
+  }
+}
+
+@media (min-width: $phone) and (orientation: landscape) {
+  .rotation-container {
+    display: block;
+    background: $action-color;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 50px;
+    color: white;
+
+    & p {
+      font-size: 25px;
+      margin-top: 50px;
+    }
   }
 }
 

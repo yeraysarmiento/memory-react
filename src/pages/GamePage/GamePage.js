@@ -8,6 +8,7 @@ import "./GamePage.scss";
 import { Howl } from "howler";
 import wrongAnswer from "../../assets/soundEffects/wrongAnswer.mp3";
 import rightAnswer from "../../assets/soundEffects/rightAnswer.mp3";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function GamePage() {
   const { boardList, setMatchedCell } = useBoard();
@@ -74,6 +75,10 @@ function GamePage() {
 
   return (
     <>
+      <div className="rotation-container">
+        <FontAwesomeIcon icon="sync-alt" />
+        <p>Rotate your phone!</p>
+      </div>
       <main>
         <div className="board-container">
           <Board boardList={boardList} onPair={setPair} />
