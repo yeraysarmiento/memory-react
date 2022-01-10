@@ -1,5 +1,4 @@
-@import "../../styles/sizes.scss";
-@import "../../styles/colors.scss";
+@import "../../styles/_sizes.scss";
 
 .board {
   width: 100%;
@@ -21,7 +20,6 @@
   }
 
   &-container {
-    max-height: calc(100vh - 125px - 145px);
     height: 100%;
     width: 100%;
     display: flex;
@@ -30,10 +28,11 @@
   }
 }
 
-@media (min-width: $phone) and (orientation: landscape) {
+@media (max-width: $laptop) and (orientation: landscape) {
   .board {
     height: 100%;
     width: auto;
     aspect-ratio: 1 / 1;
+    background: red;
   }
 }
