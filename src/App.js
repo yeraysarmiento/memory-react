@@ -1,7 +1,7 @@
 import GamePage from "./pages/GamePage/GamePage";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faRedo } from "@fortawesome/free-solid-svg-icons";
+import { faRedo, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 import FormPage from "./pages/FormPage/FormPage";
 import useBoard from "./hooks/useBoard";
 import usePlayers from "./hooks/usePlayers";
@@ -9,7 +9,7 @@ import Menu from "./components/Menu/Menu";
 import { useEffect, useState } from "react";
 import Ranking from "./components/Ranking/Ranking";
 
-library.add(fab, faRedo);
+library.add(fab, faRedo, faSyncAlt);
 
 function App() {
   const { players, setTurn, resetPoints, deletePlayers } = usePlayers();

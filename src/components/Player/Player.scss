@@ -6,7 +6,7 @@
   width: 100%;
   height: auto;
   border-radius: 15px;
-  padding: 5px 15px;
+  padding: 10px 15px;
   position: relative;
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@
   }
 }
 
-@media (min-width: $tablet) {
+@media (min-width: $phone) {
   p {
     font-size: 16px;
   }

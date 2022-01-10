@@ -1,4 +1,9 @@
 @import "../../styles/sizes.scss";
+@import "../../styles/colors.scss";
+
+.rotation-container {
+  display: none;
+}
 
 button {
   color: inherit;
@@ -13,7 +18,7 @@ header {
 }
 
 main {
-  height: calc(100vh - 90px - 110px);
+  height: calc(100vh - 90px - 120px);
   padding: 0 15px;
   width: 100%;
 }
@@ -25,7 +30,7 @@ footer {
 }
 
 .players {
-  background: red;
+  margin: 0 auto;
   height: 40px;
   width: 100%;
   display: grid;
@@ -50,9 +55,9 @@ footer {
   }
 }
 
-@media (min-width: $tablet) {
+@media (min-width: $phone) {
   main {
-    height: calc(100vh - 125px - 145px);
+    height: calc(100vh - 125px - 155px);
     padding: 0 50px;
   }
 
@@ -65,8 +70,50 @@ footer {
   }
 }
 
-@media (min-width: $desktop) {
+@media (max-width: $phone) and (orientation: landscape) {
+  .rotation-container {
+    display: block;
+    background: $action-color;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 50px;
+    color: white;
+
+    & p {
+      font-size: 25px;
+      margin-top: 50px;
+    }
+  }
+}
+
+@media (min-width: $laptop) {
   header {
+    max-width: 1080px;
+  }
+
+  .players {
+    max-width: 600px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "player1 player2";
+
+    &.players--1-player {
+      grid-template-areas: "player1 x";
+    }
+  }
+
+  .board {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: $desktop) {
+  footer {
     max-width: 1080px;
   }
 
