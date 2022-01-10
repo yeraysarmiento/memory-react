@@ -37,10 +37,14 @@ function FormPage() {
     }
   };
 
-  useEffect(() => {
+  const timerPresentation = () => {
     setTimeout(() => {
       setPresentationPage(false);
     }, 1000);
+  };
+
+  useEffect(() => {
+    timerPresentation();
   });
 
   return presentationPage ? (
