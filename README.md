@@ -1,6 +1,6 @@
 # Memory
 
-This is my first game developed in React with Javascript, it is based in an exercise from FrontendMentor but I took it my own way.
+This is my first Progessive Web App game developed in React with Javascript, it is based in an exercise from FrontendMentor but I took it my own way.
 
 It is turn-based Memory game where you can choose the theme of the board, as well as the number of players and the size of the grid.
 
