@@ -25,7 +25,7 @@ footer {
 }
 
 .players {
-  background: red;
+  margin: 0 auto;
   height: 40px;
   width: 100%;
   display: grid;
@@ -50,7 +50,7 @@ footer {
   }
 }
 
-@media (min-width: $tablet) {
+@media (min-width: $phone) {
   main {
     height: calc(100vh - 125px - 145px);
     padding: 0 50px;
@@ -65,8 +65,28 @@ footer {
   }
 }
 
-@media (min-width: $desktop) {
+@media (min-width: $laptop) {
   header {
+    max-width: 1080px;
+  }
+
+  .players {
+    max-width: 600px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "player1 player2";
+
+    &.players--1-player {
+      grid-template-areas: "player1 x";
+    }
+  }
+
+  .board {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: $desktop) {
+  footer {
     max-width: 1080px;
   }
 
