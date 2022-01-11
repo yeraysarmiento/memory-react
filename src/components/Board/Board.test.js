@@ -75,10 +75,8 @@ describe("Given a Board function", () => {
           </Provider>
         );
 
-        const mockedFunction = jest.fn();
-        Board.prototype.setPair = mockedFunction;
-        const button = screen.getByRole("button", { name: "🦊" });
-        userEvent.click(button);
+        const buttons = screen.getAllByRole("button");
+        userEvent.click(buttons[0]);
 
         expect(onPair).toHaveBeenCalled();
       });
@@ -191,7 +189,7 @@ describe("Given a Board function", () => {
           </Provider>
         );
 
-        const list = screen.getByRole("list", "");
+        const list = screen.getByRole("list");
 
         expect(list).toHaveClass("board--4x4");
       });

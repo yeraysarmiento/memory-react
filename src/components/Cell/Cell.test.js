@@ -17,7 +17,7 @@ describe("Given a Cell function", () => {
 
       render(<Cell cell={cell} actionOnClick={onClick} boardLength={16} />);
 
-      const button = screen.getByRole("button", { name: "icon" });
+      const button = screen.getByRole("button");
 
       expect(button).toBeInTheDocument();
     });
@@ -33,7 +33,7 @@ describe("Given a Cell function", () => {
 
         render(<Cell cell={cell} actionOnClick={onClick} boardLength={16} />);
 
-        const button = screen.getByRole("button", { name: "icon" });
+        const button = screen.getByRole("button");
         userEvent.click(button);
 
         expect(onClick).toHaveBeenCalled();
@@ -84,7 +84,7 @@ describe("Given a Cell function", () => {
 
           render(<Cell cell={cell} actionOnClick={onClick} boardLength={16} />);
 
-          const button = screen.getByRole("button", { name: "icon" });
+          const button = screen.getByRole("button");
           userEvent.click(button);
 
           expect(onClick).toHaveBeenCalled();
@@ -104,7 +104,7 @@ describe("Given a Cell function", () => {
 
         const spanCell = screen.getByText("icon");
 
-        expect(spanCell).not.toHaveClass("cell__icon s5x5");
+        expect(spanCell).not.toHaveClass("cell__front s5x5");
       });
     });
     describe("And the boardList length is not 16", () => {
@@ -120,7 +120,7 @@ describe("Given a Cell function", () => {
 
         const spanCell = screen.getByText("icon");
 
-        expect(spanCell).toHaveClass("cell__icon s5x5");
+        expect(spanCell).toHaveClass("cell__front s5x5");
       });
     });
   });
