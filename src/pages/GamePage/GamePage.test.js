@@ -8,6 +8,8 @@ import "@testing-library/jest-dom";
 import { combineReducers, createStore } from "redux";
 window.React = React;
 
+jest.mock("../../assets/soundEffects/wrongAnswer.mp3");
+
 describe("Given a GamePage function", () => {
   jest.useFakeTimers();
 
@@ -27,7 +29,7 @@ describe("Given a GamePage function", () => {
         </Provider>
       );
 
-      const list = screen.getByRole("list");
+      const list = screen.getAllByRole("list")[0];
       const buttons = screen.getAllByRole("button");
 
       expect(buttons).toHaveLength(36);

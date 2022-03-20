@@ -59,7 +59,7 @@
   "jest": {
     "collectCoverage": true,
     "moduleNameMapper": {
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+      "\\.(css|less|scss|sass|mp3)$": "identity-obj-proxy"
     },
     "testEnvironment": "jsdom",
     "collectCoverageFrom": [
@@ -69,6 +69,11 @@
       "!src/assets/*.js",
       "!src/hooks/*.js",
       "!src/pages/GamePage/*.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      ".mp3"
     ]
   }
 }
