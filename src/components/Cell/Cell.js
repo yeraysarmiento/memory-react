@@ -18,7 +18,7 @@ function Cell({ cell, actionOnClick, boardLength }) {
           className="cell__back"
         ></button>
         <div
-          className={boardLength === 16 ? "cell__front" : "cell__front s5x5"}
+          className={boardLength === 16 ? "cell__front" : "cell__front s6x6"}
         >
           {cell.content}
         </div>

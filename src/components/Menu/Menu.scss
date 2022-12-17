@@ -53,6 +53,8 @@
 
       & button {
         font-size: 30px;
+        display: flex;
+        justify-content: center;
 
         & span:nth-of-type(2) {
           display: none;
@@ -67,7 +69,7 @@
   font-size: 25px;
   margin-bottom: 20px;
   text-decoration: underline;
-  text-underline-offset: 6px;
+  text-underline-offset: 10px;
   position: absolute;
 
   &.title--form {

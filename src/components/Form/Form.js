@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./Form.scss";
 
-function Form({ onSubmit, onChange }) {
+function Form({ onSubmit, onChange, disabled }) {
   return (
     <div className="game-form">
       <form
@@ -30,7 +30,9 @@ function Form({ onSubmit, onChange }) {
           <input type="radio" name="board-size" value="36" id="6x6" />
           <label htmlFor="6x6">6x6</label>
         </div>
-        <button type="submit">Start Game</button>
+        <button type="submit" disabled={disabled}>
+          Start Game
+        </button>
       </form>
     </div>
   );
@@ -39,6 +41,7 @@ function Form({ onSubmit, onChange }) {
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
 };
 
 export default Form;

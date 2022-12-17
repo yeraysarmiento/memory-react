@@ -56,12 +56,12 @@
   font-size: 40px;
 }
 
+.s6x6 {
+  font-size: 30px;
+}
+
 @media (min-width: $tablet) {
   .cell__front {
     font-size: 70px;
-
-    &.s5x5 {
-      font-size: 60px;
-    }
   }
 }

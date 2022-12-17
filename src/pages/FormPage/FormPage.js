@@ -36,7 +36,13 @@ function FormPage() {
     }
   };
 
-  return <Form onSubmit={onSubmit} onChange={onChange} />;
+  return (
+    <Form
+      onSubmit={onSubmit}
+      onChange={onChange}
+      disabled={!setup.theme || !setup.players || !setup.gridSize}
+    />
+  );
 }
 
 export default FormPage;

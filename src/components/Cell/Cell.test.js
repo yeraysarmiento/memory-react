@@ -104,11 +104,11 @@ describe("Given a Cell function", () => {
 
         const spanCell = screen.getByText("icon");
 
-        expect(spanCell).not.toHaveClass("cell__front s5x5");
+        expect(spanCell).not.toHaveClass("cell__front s6x6");
       });
     });
     describe("And the boardList length is not 16", () => {
-      test("Then it should render a <span> tag with a class 'cell__icon s5x5'", () => {
+      test("Then it should render a <span> tag with a class 'cell__icon s6x6'", () => {
         const onClick = jest.fn();
         const cell = {
           content: "icon",
@@ -120,7 +120,7 @@ describe("Given a Cell function", () => {
 
         const spanCell = screen.getByText("icon");
 
-        expect(spanCell).toHaveClass("cell__front s5x5");
+        expect(spanCell).toHaveClass("cell__front s6x6");
       });
     });
   });
