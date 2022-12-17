@@ -25,7 +25,7 @@ describe("Given a FormPage function", () => {
         name: "2 Players",
       });
       const input4x4 = screen.getByRole("radio", { name: "4x4" });
-      const input5x5 = screen.getByRole("radio", { name: "5x5" });
+      const input6x6 = screen.getByRole("radio", { name: "6x6" });
 
       const button = screen.getByRole("button", { name: "Start Game" });
 
@@ -34,12 +34,12 @@ describe("Given a FormPage function", () => {
       expect(input1Player).toBeInTheDocument();
       expect(input2Players).toBeInTheDocument();
       expect(input4x4).toBeInTheDocument();
-      expect(input5x5).toBeInTheDocument();
+      expect(input6x6).toBeInTheDocument();
       expect(button).toBeInTheDocument();
 
       userEvent.click(inputIcons);
       userEvent.click(input1Player);
-      userEvent.click(input5x5);
+      userEvent.click(input6x6);
       userEvent.click(button);
     });
   });

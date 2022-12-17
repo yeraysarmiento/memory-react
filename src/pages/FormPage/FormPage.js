@@ -23,7 +23,7 @@ function FormPage() {
       setSetup({ ...setup, theme: event.target.value });
     } else if (id === "1-player" || id === "2-players") {
       setSetup({ ...setup, players: event.target.value });
-    } else if (id === "4x4" || id === "5x5") {
+    } else if (id === "4x4" || id === "6x6") {
       setSetup({ ...setup, gridSize: event.target.value });
     }
   };
