@@ -6,7 +6,9 @@ const boardReducer = (cells = [], action = {}) => {
   switch (action.type) {
     case actionTypes.setMatched:
       cellsList = cells.map((cell) =>
-        cell.id === action.cell.id ? { ...cell, isMatched: true } : cell
+        cell.id === action.cell.id
+          ? { ...cell, isMatched: true, matchedBy: action.player }
+          : cell
       );
       break;
     case actionTypes.loadBoard:

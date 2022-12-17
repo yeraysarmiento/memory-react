@@ -17,8 +17,17 @@
     transition: transform 0.5s;
   }
 
-  &.cell--matched .cell__front {
-    background-color: $action-color;
+  &.cell--matched {
+    &.cell--player1 {
+      & .cell__front {
+        background-color: $player1-color;
+      }
+    }
+    &.cell--player2 {
+      & .cell__front {
+        background-color: $player2-color;
+      }
+    }
   }
 }
 

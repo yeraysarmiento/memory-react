@@ -1,14 +1,19 @@
 import PropTypes from "prop-types";
+import usePlayers from "../../hooks/usePlayers";
 import "./Cell.scss";
 
 function Cell({ cell, actionOnClick, boardLength }) {
+  const { players } = usePlayers();
+
   return (
     <li
       className={
         cell.isHidden
           ? "cell"
           : cell.isMatched
-          ? "cell cell--matched"
+          ? cell.matchedBy.name === players[0]?.name
+            ? "cell cell--matched cell--player1"
+            : "cell cell--matched cell--player2"
           : "cell cell--showing"
       }
     >

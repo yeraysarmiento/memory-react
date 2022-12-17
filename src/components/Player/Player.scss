@@ -1,4 +1,5 @@
 @import "../../styles/sizes.scss";
+@import "../../styles/_colors.scss";
 
 .player {
   color: rgb(26, 41, 56);
@@ -13,6 +14,14 @@
   justify-content: space-between;
   height: 100%;
 
+  &--1 {
+    background-color: $player1-color;
+  }
+
+  &--2 {
+    background-color: $player2-color;
+  }
+
   &__points {
     font-size: 22px;
     font-weight: bold;
@@ -23,16 +32,22 @@
     display: none;
     transform: rotate(45deg);
     position: absolute;
-    background-color: rgb(243, 168, 63);
     top: -10px;
     right: calc(50% - 10px);
     height: 20px;
     width: 20px;
+
+    &--1 {
+      background-color: $player1-color;
+    }
+
+    &--2 {
+      background-color: $player2-color;
+    }
   }
 
   &--playing {
     color: white;
-    background-color: rgb(243, 168, 63);
   }
 
   &--playing .player__pointer {

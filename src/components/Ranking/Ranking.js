@@ -10,6 +10,7 @@ function Ranking({ players, onReset, onRestart }) {
   });
 
   const winner = rankingList[0];
+  const isWinnerPlayer1 = rankingList[0].name === players[0].name;
 
   useEffect(() => {
     if (rankingList[0]?.points === rankingList[1]?.points) {
@@ -40,7 +41,9 @@ function Ranking({ players, onReset, onRestart }) {
             <li
               className={
                 player?.name === winner.name
-                  ? "ranking__player ranking__player--winner"
+                  ? isWinnerPlayer1
+                    ? "ranking__player ranking__player--player1"
+                    : "ranking__player ranking__player--player2"
                   : "ranking__player"
               }
               key={player?.name}

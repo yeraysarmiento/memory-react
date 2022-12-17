@@ -3,6 +3,10 @@ import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import Cell from "./Cell";
 import React from "react";
+import { Provider } from "react-redux";
+import configureStore from "../../redux/store";
+
+const store = configureStore();
 window.React = React;
 
 describe("Given a Cell function", () => {
@@ -15,7 +19,11 @@ describe("Given a Cell function", () => {
         isMatched: false,
       };
 
-      render(<Cell cell={cell} actionOnClick={onClick} boardLength={16} />);
+      render(
+        <Provider store={store}>
+          <Cell cell={cell} actionOnClick={onClick} boardLength={16} />
+        </Provider>
+      );
 
       const button = screen.getByRole("button");
 
@@ -31,7 +39,11 @@ describe("Given a Cell function", () => {
           isMatched: false,
         };
 
-        render(<Cell cell={cell} actionOnClick={onClick} boardLength={16} />);
+        render(
+          <Provider store={store}>
+            <Cell cell={cell} actionOnClick={onClick} boardLength={16} />
+          </Provider>
+        );
 
         const button = screen.getByRole("button");
         userEvent.click(button);
@@ -49,7 +61,11 @@ describe("Given a Cell function", () => {
           isMatched: false,
         };
 
-        render(<Cell cell={cell} actionOnClick={onClick} boardLength={16} />);
+        render(
+          <Provider store={store}>
+            <Cell cell={cell} actionOnClick={onClick} boardLength={16} />
+          </Provider>
+        );
 
         const cellTag = screen.getByRole("listitem");
 
@@ -64,9 +80,14 @@ describe("Given a Cell function", () => {
           content: "icon",
           isHidden: false,
           isMatched: true,
+          matchedBy: { name: "Player 1" },
         };
 
-        render(<Cell cell={cell} actionOnClick={onClick} boardLength={16} />);
+        render(
+          <Provider store={store}>
+            <Cell cell={cell} actionOnClick={onClick} boardLength={16} />
+          </Provider>
+        );
 
         const cellTag = screen.getByRole("listitem");
 
@@ -80,9 +101,14 @@ describe("Given a Cell function", () => {
             content: "icon",
             isHidden: false,
             isMatched: true,
+            matchedBy: { name: "Player 1" },
           };
 
-          render(<Cell cell={cell} actionOnClick={onClick} boardLength={16} />);
+          render(
+            <Provider store={store}>
+              <Cell cell={cell} actionOnClick={onClick} boardLength={16} />
+            </Provider>
+          );
 
           const button = screen.getByRole("button");
           userEvent.click(button);
@@ -100,7 +126,11 @@ describe("Given a Cell function", () => {
           isMatched: false,
         };
 
-        render(<Cell cell={cell} actionOnClick={onClick} boardLength={16} />);
+        render(
+          <Provider store={store}>
+            <Cell cell={cell} actionOnClick={onClick} boardLength={16} />
+          </Provider>
+        );
 
         const spanCell = screen.getByText("icon");
 
@@ -116,8 +146,11 @@ describe("Given a Cell function", () => {
           isMatched: false,
         };
 
-        render(<Cell cell={cell} actionOnClick={onClick} boardLength={25} />);
-
+        render(
+          <Provider store={store}>
+            <Cell cell={cell} actionOnClick={onClick} boardLength={25} />
+          </Provider>
+        );
         const spanCell = screen.getByText("icon");
 
         expect(spanCell).toHaveClass("cell__front s6x6");

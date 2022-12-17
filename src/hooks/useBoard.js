@@ -11,8 +11,8 @@ const useBoard = () => {
   const boardList = useSelector((store) => store.boardList);
   const dispatch = useDispatch();
 
-  const setMatchedCell = (cell) => {
-    dispatch(setMatchedAction(cell));
+  const setMatchedCell = (cell, player) => {
+    dispatch(setMatchedAction(cell, player));
   };
 
   const loadBoard = (boardTheme, gridSize) => {
