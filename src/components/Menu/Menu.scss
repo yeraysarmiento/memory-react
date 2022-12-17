@@ -39,7 +39,7 @@
     &--restart {
       grid-area: restart;
       color: white;
-      background-color: rgb(243, 168, 63);
+      background-color: $action-color;
 
       & span:nth-of-type(2) {
         display: none;
@@ -49,7 +49,7 @@
     &--new-game {
       grid-area: newgame;
       color: rgb(26, 41, 56);
-      background-color: rgb(190, 206, 217);
+      background-color: $secondary-color;
 
       & button {
         font-size: 30px;

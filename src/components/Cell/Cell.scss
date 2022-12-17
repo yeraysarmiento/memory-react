@@ -20,12 +20,12 @@
   &.cell--matched {
     &.cell--player1 {
       & .cell__front {
-        background-color: $action-color;
+        background-color: $player1-color;
       }
     }
     &.cell--player2 {
       & .cell__front {
-        background-color: #7994bb;
+        background-color: $player2-color;
       }
     }
   }

@@ -1,4 +1,5 @@
 @import "../../styles/sizes.scss";
+@import "../../styles/_colors.scss";
 
 .player {
   color: rgb(26, 41, 56);
@@ -14,11 +15,11 @@
   height: 100%;
 
   &--1 {
-    background-color: #f3a83f;
+    background-color: $player1-color;
   }
 
   &--2 {
-    background-color: #7994bb;
+    background-color: $player2-color;
   }
 
   &__points {
@@ -37,11 +38,11 @@
     width: 20px;
 
     &--1 {
-      background-color: #f3a83f;
+      background-color: $player1-color;
     }
 
     &--2 {
-      background-color: #7994bb;
+      background-color: $player2-color;
     }
   }
 
