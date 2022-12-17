@@ -86,8 +86,8 @@ function GamePage() {
             players.length === 1 ? "players players--1-player" : "players"
           }
         >
-          {players.map((player) => (
-            <Player player={player} key={player.name} />
+          {players.map((player, i) => (
+            <Player player={player} key={player.name} index={i + 1} />
           ))}
         </ul>
       </footer>

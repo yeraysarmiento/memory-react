@@ -13,6 +13,14 @@
   justify-content: space-between;
   height: 100%;
 
+  &--1 {
+    background-color: #f3a83f;
+  }
+
+  &--2 {
+    background-color: #7994bb;
+  }
+
   &__points {
     font-size: 22px;
     font-weight: bold;
@@ -23,16 +31,22 @@
     display: none;
     transform: rotate(45deg);
     position: absolute;
-    background-color: rgb(243, 168, 63);
     top: -10px;
     right: calc(50% - 10px);
     height: 20px;
     width: 20px;
+
+    &--1 {
+      background-color: #f3a83f;
+    }
+
+    &--2 {
+      background-color: #7994bb;
+    }
   }
 
   &--playing {
     color: white;
-    background-color: rgb(243, 168, 63);
   }
 
   &--playing .player__pointer {
