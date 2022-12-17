@@ -54,10 +54,16 @@
 
     &--player1 {
       background-color: $player1-color;
+      opacity: 0.5;
     }
 
     &--player2 {
       background-color: $player2-color;
+      opacity: 0.5;
+    }
+
+    &--winner {
+      opacity: 1;
     }
   }
 

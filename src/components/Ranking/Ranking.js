@@ -42,9 +42,11 @@ function Ranking({ players, onReset, onRestart }) {
               className={
                 player?.name === winner.name
                   ? isWinnerPlayer1
-                    ? "ranking__player ranking__player--player1"
-                    : "ranking__player ranking__player--player2"
-                  : "ranking__player"
+                    ? "ranking__player ranking__player--player1 ranking__player--winner"
+                    : "ranking__player ranking__player--player2 ranking__player--winner"
+                  : player.name === players[0].name
+                  ? "ranking__player ranking__player--player1"
+                  : "ranking__player ranking__player--player2"
               }
               key={player?.name}
             >
