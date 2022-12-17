@@ -49,10 +49,11 @@ function GamePage() {
         }
       }
     } else {
+      const playerPlaying = players.find((player) => player.isPlaying);
       soundPlay(rightAnswer);
 
-      setMatchedCell(cellOne);
-      setMatchedCell(cellTwo);
+      setMatchedCell(cellOne, playerPlaying);
+      setMatchedCell(cellTwo, playerPlaying);
       removeSelectedCell(cellOne);
       removeSelectedCell(cellTwo);
       if (players[0].isPlaying) {

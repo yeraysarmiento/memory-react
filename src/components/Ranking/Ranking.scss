@@ -52,8 +52,12 @@
       margin-bottom: 20px;
     }
 
-    &.ranking__player--winner {
+    &--player1 {
       background-color: $action-color;
+    }
+
+    &--player2 {
+      background-color: #7994bb;
     }
   }
 

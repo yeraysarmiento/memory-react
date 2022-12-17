@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import "./Player.scss";
 
 function Player({ player, index }) {
-  console.log("index: ", index);
   return (
     <article
       className={

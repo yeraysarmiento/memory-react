@@ -10,9 +10,10 @@ export const removeSelectedAction = (cell) => ({
   cell,
 });
 
-export const setMatchedAction = (cell) => ({
+export const setMatchedAction = (cell, player) => ({
   type: actionTypes.setMatched,
   cell,
+  player,
 });
 
 export const resetBoardAction = (board) => ({
